@@ -1,0 +1,1625 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sesler · Гласные и согласные в турецком</title>
+<meta name="description" content="Гласные и согласные звуки турецкого: 8 гласных, гармония, звонкие и глухие, Fıstıkçı Şahap, смягчение и буферные буквы. С анимациями, видео и упражнениями.">
+<meta property="og:title" content="Sesler · Гласные и согласные в турецком">
+<meta property="og:description" content="Гласные дружат. Согласные спорят. Разбираем, как они договариваются.">
+<meta name="theme-color" content="#F2F2F0">
+<link rel="preload" href="assets/fonts/urbanist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23D7FB4C'/%3E%3Ccircle cx='50' cy='50' r='12' fill='%231D2654'/%3E%3C/svg%3E">
+<script defer src="assets/gsap-bundle.min.js"></script>
+<style>
+
+@font-face{font-family:"Urbanist";font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/fonts/urbanist-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/fonts/manrope-cyrillic.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+:root{
+  color-scheme:light;
+  --bg:#F2F2F0; --bg2:#E7E7E4; --card:#FFFFFF;
+  --navy:#1D2654; --ink:#15171C; --grey:#8A8E97; --grey2:#B9BCC2; --line:rgba(21,23,28,.08);
+  --peri:#5B6BDC; --peri2:#93A0EE; --lav:#E9ECFD;
+  --lime:#D7FB4C; --lime2:#C3EB2F; --olive:#8DB82A;
+  --orange:#E8572A; --sky:#3E8FD0; --sky2:#93C7EE; --violet:#7A5AE0; --gold:#F0A53A;
+  --dark:#2B2C2E;
+  --f:"Urbanist","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:16px; --rl:28px;
+}
+@media (min-width:760px){:root{--gut:32px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-width:none;-webkit-text-size-adjust:100%}
+html::-webkit-scrollbar{display:none}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 var(--f);-webkit-font-smoothing:antialiased}
+main{overflow-x:clip;position:relative}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--peri);outline-offset:3px;border-radius:8px}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.14em}
+.sunlogo{width:1em;height:1em;fill:currentColor;flex:none}
+[lang="de"]{font-family:"Urbanist",system-ui,sans-serif}
+
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:var(--gut)}
+@media (max-width:759px){.wrap{padding-right:30px}}
+section{position:relative;padding-block:64px;scroll-margin-top:60px}
+@media (min-width:760px){section{padding-block:96px}}
+
+/* type */
+.h2{font-weight:500;font-size:clamp(36px,9.6vw,78px);line-height:1;letter-spacing:-.045em;color:var(--navy);margin:16px 0 0;text-wrap:balance}
+.h2 .wd{display:inline-block}
+.peri{color:var(--peri)}
+.lead{font-size:clamp(18px,4.8vw,23px);line-height:1.36;color:var(--grey);max-width:36ch;margin:16px 0 0;letter-spacing:-.01em}
+.lead b{color:var(--ink);font-weight:500}
+.small{font-size:14px;color:var(--grey)}
+.sh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.kick{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--navy);background:var(--bg2);padding:6px 14px 6px 6px;border-radius:999px}
+.kick .n{background:var(--lime);border-radius:999px;padding:3px 10px;font-weight:700}
+.meta-t{font-size:13px;color:var(--grey);display:inline-flex;align-items:center;gap:6px}
+.de{font-weight:600;color:var(--navy)}
+.tr{color:var(--peri);font-weight:500;white-space:nowrap}
+
+/* buttons, pills, tabs */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;border:0;background:var(--dark);color:#fff;font-weight:500;font-size:15px;text-decoration:none;transition:background .2s,translate .2s;letter-spacing:-.005em}
+.btn:hover{translate:0 -2px}
+.btn.lime{background:var(--lime);color:var(--ink)}
+.btn.ghost{background:var(--bg2);color:var(--ink)}
+.btn.sm{padding:10px 16px;font-size:14px}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px;max-width:100%}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:0;background:var(--bg2);color:#4A4D55;padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:500;white-space:nowrap;transition:background .25s,color .25s}
+.tab[aria-selected="true"]{background:var(--lime);color:var(--ink)}
+.card .tab{background:#F1F1EF}
+.card .tab[aria-selected="true"]{background:var(--lime)}
+.say{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:0;background:var(--lav);color:var(--peri);flex:none;vertical-align:middle;transition:background .2s,scale .2s}
+.say:hover{scale:1.08}
+.say .ic{font-size:16px}
+.say.on{background:var(--peri);color:#fff}
+.no-tts .say{display:none}
+.dotc{width:9px;height:9px;border-radius:50%;flex:none;display:inline-block}
+
+/* cards */
+.card{background:var(--card);border-radius:var(--rl);padding:20px;box-shadow:0 30px 60px -44px rgba(29,38,84,.35)}
+@media (min-width:760px){.card{padding:28px}}
+.shell{background:var(--bg2);border-radius:40px;padding:10px}
+@media (min-width:760px){.shell{padding:16px}}
+.card-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card-h h3{margin:0;font-size:17px;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+.card-h p{margin:2px 0 0;font-size:13px;color:var(--grey)}
+.pager{display:flex;gap:5px;align-items:center;justify-content:center;margin-top:14px}
+.pager i{width:6px;height:6px;border-radius:999px;background:var(--grey2);transition:width .3s,background .3s}
+.pager i.on{width:24px;background:var(--navy)}
+.navb{width:42px;height:42px;border-radius:50%;border:0;background:#F1F1EF;display:grid;place-items:center;font-size:18px;color:var(--navy);flex:none}
+
+/* reveal fallback */
+.rv.in{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}}
+
+/* ===== custom scrollbar rail ===== */
+.rail{position:fixed;right:1px;top:76px;bottom:20px;width:24px;z-index:40;touch-action:none;user-select:none;-webkit-user-select:none}
+@media (min-width:760px){.rail{right:10px;width:30px}}
+.rail-track{position:absolute;left:50%;top:0;bottom:0;width:3px;translate:-50% 0;background:rgba(29,38,84,.1);border-radius:3px;overflow:hidden}
+.rail-fill{position:absolute;inset:0;background:linear-gradient(var(--peri),var(--peri2));transform-origin:top;transform:scaleY(0)}
+.rail-tick{position:absolute;left:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 1.5px var(--grey2);border:0;padding:0;transition:background .3s,box-shadow .3s,scale .3s}
+.rail-tick.on{background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy);scale:1.25}
+.rail-tick::before{content:"";position:absolute;inset:-9px}
+.rail-thumb{position:absolute;left:50%;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(29,38,84,.6);cursor:grab;transition:opacity .4s,width .2s,height .2s}
+.rail-thumb .sunlogo{font-size:20px}
+.rail.idle .rail-thumb{opacity:.55}
+.rail.drag .rail-thumb{cursor:grabbing}
+.rail-tip{position:absolute;right:34px;top:0;translate:0 -50%;background:var(--dark);color:#fff;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap;display:flex;gap:7px;align-items:center;opacity:0;transition:opacity .3s;pointer-events:none}
+.rail-tip b{color:var(--lime);font-weight:700}
+.rail.show .rail-tip{opacity:1}
+
+/* ===== top bar ===== */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(242,242,240,.96)}
+@media (min-width:900px){.topbar{background:rgba(242,242,240,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--navy)}
+.brand .sunlogo{font-size:28px}
+.brand b{font-size:23px;font-weight:500;letter-spacing:-.04em}
+.top-r{display:flex;gap:6px;align-items:center;margin-right:24px}
+.top-r .tab{font-size:13.5px;padding:8px 14px;text-decoration:none}
+@media (max-width:420px){.top-r .tab{display:none}}
+.prog{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--peri);transform-origin:left;transform:scaleX(0)}
+
+/* ===== HERO ===== */
+.hero{padding:6px 8px 0}
+@media (min-width:760px){.hero{padding:10px 16px 0}}
+.hero-card{position:relative;height:min(88svh,780px);min-height:600px;border-radius:34px;overflow:hidden;background:#7E9DB8;isolation:isolate}
+.land{position:absolute;inset:0;width:100%;height:100%;display:block}
+.land .intro-sun{animation:sunUp 1.8s cubic-bezier(.2,.8,.2,1) both;transform-box:fill-box;transform-origin:center}
+.land .intro-far{animation:upA 1.4s .1s cubic-bezier(.2,.8,.2,1) both}
+.land .intro-mid{animation:upA 1.4s .2s cubic-bezier(.2,.8,.2,1) both}
+.land .intro-near{animation:upA 1.4s .3s cubic-bezier(.2,.8,.2,1) both}
+@keyframes sunUp{from{transform:translateY(60px) scale(.7);opacity:.2}}
+@keyframes upA{from{transform:translateY(40px)}}
+.pollen{position:absolute;inset:0;pointer-events:none;z-index:1}
+.pollen i{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;opacity:.7;animation:drift 9s ease-in-out infinite alternate}
+@keyframes drift{to{translate:18px -40px;opacity:.15}}
+.hero-top{position:absolute;z-index:2;left:0;right:0;top:9%;text-align:center;padding:0 20px;color:#fff}
+.hero-top h1{margin:0;font-weight:500;font-size:clamp(38px,10.6vw,96px);line-height:.98;letter-spacing:-.05em;text-shadow:0 2px 30px rgba(20,30,60,.18)}
+.hero-top h1 .peri{color:#5160D6;display:block}
+.hero-top h1 .ln{display:block}
+.hero-top p{margin:14px auto 0;font-size:clamp(15px,4.2vw,19px);max-width:30ch;opacity:.95}
+.hero-top .btn{margin-top:22px;padding:12px 26px;font-size:15px;font-weight:600}
+.hero-intro{animation:heroIn 1.2s .2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(24px)}}
+.hero-bl{position:absolute;z-index:2;left:22px;right:22px;bottom:116px;margin:0;color:#fff;font-size:15.5px;line-height:1.4;max-width:30ch;text-shadow:0 1px 18px rgba(0,0,0,.25)}
+@media (min-width:900px){.hero-bl{bottom:44px;left:56px;font-size:19px;max-width:34ch}}
+.notch{position:absolute;z-index:3;right:0;bottom:0;background:var(--bg);border-top-left-radius:34px;padding:10px 0 0 10px;display:flex;gap:6px}
+.notch::before,.notch::after{content:"";position:absolute;width:34px;height:34px;background:radial-gradient(circle at 0 0,transparent 33.5px,var(--bg) 34px)}
+.notch::before{right:0;top:-34px}
+.notch::after{left:-34px;bottom:0}
+.stat{width:clamp(64px,19vw,128px);aspect-ratio:1;border-radius:50%;background:#E6E6E3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
+.stat b{font-size:clamp(20px,5.6vw,34px);font-weight:500;letter-spacing:-.04em;color:var(--navy);line-height:1}
+.stat small{font-size:clamp(8.5px,2.3vw,11px);color:var(--grey);line-height:1.15;margin-top:4px}
+
+/* ===== STORY ===== */
+.feed{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,400px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 4px;margin-top:26px;scrollbar-width:none}
+.feed::-webkit-scrollbar{display:none}
+@media (min-width:1000px){.feed{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible}}
+.post{scroll-snap-align:start;display:flex;flex-direction:column;gap:12px;min-height:360px}
+.post-h{display:flex;align-items:center;gap:10px}
+.av{width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center}
+.av .sunlogo{font-size:28px}
+.post-h b{display:block;font-size:15px;font-weight:600;color:var(--navy)}
+.post-h small{display:block;font-size:12.5px;color:var(--grey)}
+.post-h .ix{margin-left:auto;font-size:12px;color:var(--grey);background:#F1F1EF;border-radius:999px;padding:4px 10px}
+.post p{margin:0;font-size:17px;line-height:1.45;letter-spacing:-.01em}
+.post p.k{margin-top:auto;font-weight:600;color:var(--navy)}
+.post .de{color:var(--peri)}
+
+/* ===== ROUTE list ===== */
+.list{display:grid;gap:6px;margin-top:24px}
+@media (min-width:860px){.list.two{grid-template-columns:1fr 1fr}}
+.row{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:18px;background:#fff;text-decoration:none;transition:background .2s,translate .2s}
+.row:nth-child(even){background:#F7F7F5}
+.row:hover{translate:4px 0}
+.row .t{flex:1;min-width:0}
+.row .t b{display:block;font-size:16px;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+.row .t small{display:block;font-size:12.5px;color:var(--grey);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .go{color:var(--navy);font-size:16px}
+.row .num{font-size:12px;color:var(--grey);width:22px}
+
+/* ===== IDEA ===== */
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;align-items:center}
+.split>*{min-width:0}
+@media (min-width:900px){.split{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:64px}}
+.photo{position:relative;border-radius:36px;overflow:visible;aspect-ratio:4/5;max-width:470px}
+.photo svg.landsm{position:absolute;inset:0;width:100%;height:100%;border-radius:36px;display:block}
+.float{position:absolute;background:#fff;border-radius:18px;padding:12px 14px;box-shadow:0 20px 40px -20px rgba(29,38,84,.35)}
+.float .fi{width:30px;height:30px;border-radius:50%;background:var(--lav);color:var(--peri);display:grid;place-items:center;margin-bottom:8px}
+.float b{display:block;font-size:17px;font-weight:600;color:var(--navy);letter-spacing:-.02em}
+.float small{display:block;font-size:11px;color:var(--grey);line-height:1.2;max-width:15ch}
+.float.f1{right:-8px;top:12%}
+.float.f2{left:16px;bottom:-14px;padding:9px 14px}
+.float.f2 b{font-size:15px}
+.float .box{position:absolute}
+.photo .frame{position:absolute;left:28%;top:36%;width:38%;height:30%;border:1.5px solid rgba(255,255,255,.8);border-radius:14px}
+.chart{margin-top:22px}
+.bars{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;height:190px;margin-top:18px;padding-left:24px;position:relative;border-bottom:1px solid var(--line)}
+.bars .gl{position:absolute;left:24px;right:0;height:1px;background:var(--line)}
+.bars .gl span{position:absolute;left:-24px;top:-8px;font-size:11px;color:var(--grey)}
+.bg2{flex:1;display:flex;justify-content:center;align-items:flex-end;gap:4px;height:100%;position:relative}
+.bar{width:min(18px,32%);border-radius:7px 7px 3px 3px;background:var(--peri);transform-origin:bottom;position:relative}
+.bar.en{background:#CDD3F6}
+.bars-x{display:flex;justify-content:space-between;padding-left:24px;margin-top:8px}
+.bars-x span{flex:1;text-align:center;font-weight:600;color:var(--navy);font-size:15px}
+.tipb{position:absolute;bottom:calc(100% + 8px);left:50%;translate:-50% 0;background:var(--peri);color:#fff;font-size:11px;font-weight:600;line-height:1.15;padding:5px 8px;border-radius:9px;white-space:nowrap;text-align:center}
+.tipb::after{content:"";position:absolute;left:50%;top:100%;translate:-50% 0;border:5px solid transparent;border-top-color:var(--peri)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--grey);margin-top:12px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.quote{font-size:clamp(21px,5.4vw,28px);line-height:1.25;letter-spacing:-.03em;color:var(--navy);margin:26px 0 0;font-weight:500;max-width:26ch}
+.quote span{color:var(--grey)}
+
+/* ===== LETTERS ===== */
+.alpha{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;overflow:hidden;margin-top:26px}
+.alpha .aa{font-size:clamp(110px,31vw,230px);line-height:.8;font-weight:600;letter-spacing:-.06em;color:var(--ink);margin:0 0 -8px -4px}
+.alpha h3{margin:0;font-size:clamp(28px,7vw,52px);font-weight:500;color:var(--ink);letter-spacing:-.04em;line-height:1}
+.alpha .abc{font-size:clamp(14px,3.9vw,26px);letter-spacing:.14em;color:var(--grey);line-height:1.4;margin-top:8px;word-break:break-all}
+.alpha .abc i{font-style:normal;color:var(--peri);font-weight:600;display:inline-block}
+.flips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+@media (min-width:860px){.flips{grid-template-columns:repeat(4,1fr)}}
+.fc{perspective:900px;border:0;padding:0;background:none;text-align:left;aspect-ratio:1/1.08}
+.fc-in{position:relative;width:100%;height:100%;transition:rotate .7s cubic-bezier(.4,1.5,.5,1);transform-style:preserve-3d}
+.fc.on .fc-in{rotate:y 180deg}
+.fc-f,.fc-b{position:absolute;inset:0;border-radius:24px;padding:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column}
+.fc-f{background:#fff}
+.fc-f .L{font-size:clamp(52px,15vw,74px);font-weight:600;letter-spacing:-.05em;color:var(--navy);line-height:1;margin-top:auto}
+.fc-f small{font-size:12px;color:var(--grey)}
+.fc-f .q{position:absolute;right:12px;top:12px;width:26px;height:26px;border-radius:50%;background:#F1F1EF;display:grid;place-items:center;font-size:13px;color:var(--grey)}
+.fc-b{background:var(--peri);color:#fff;rotate:y 180deg}
+.fc-b .S{font-size:clamp(44px,13vw,64px);font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--lime)}
+.fc-b small{font-size:11.5px;opacity:.85;line-height:1.25}
+.fc-b .ex{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.fc-b .ex b{display:block;font-size:17px;font-weight:600}
+.fc-b .ex span{display:block;font-size:12.5px;opacity:.9}
+.fc-b .say{background:rgba(255,255,255,.18);color:#fff;width:30px;height:30px}
+.hint{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--grey);margin-top:14px}
+
+/* ===== COMBOS machine ===== */
+.mach{position:relative;min-height:330px;display:flex;flex-direction:column}
+.stage{position:relative;height:150px;display:grid;place-items:center;margin-top:8px}
+.tiles{display:flex;gap:12px;position:relative;z-index:1}
+.tile{width:clamp(46px,13vw,62px);height:clamp(56px,15vw,74px);border-radius:16px;background:#F1F1EF;display:grid;place-items:center;font-size:clamp(30px,8.6vw,42px);font-weight:600;color:var(--navy);letter-spacing:-.03em}
+.sound{position:absolute;z-index:2;width:clamp(104px,30vw,132px);aspect-ratio:1;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(215,251,76,.35),0 0 0 30px rgba(215,251,76,.14);font-size:clamp(40px,11vw,54px);font-weight:600;color:var(--ink);letter-spacing:-.03em}
+.sound small{position:absolute;bottom:20%;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(0,0,0,.45)}
+.mach-ex{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-radius:18px;background:#F7F7F5;margin-top:18px}
+.mach-ex .w{font-size:clamp(26px,7.4vw,34px);font-weight:600;color:var(--navy);letter-spacing:-.03em;line-height:1}
+.mach-ex .w mark{background:var(--lime);color:inherit;border-radius:8px;padding:0 .06em;margin:0 -.03em}
+.mach-ex .r{font-size:14px;color:var(--grey);margin-top:4px}
+.mach-note{font-size:14px;color:var(--grey);min-height:2.9em;margin:12px 2px 0}
+.mach-ctrl{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:10px}
+.mach-ctrl .pager{flex:1;margin:0}
+.mach-ctrl .count{font-size:12px;color:var(--grey);width:44px;text-align:right}
+
+/* ===== CH flow ===== */
+.flowc{margin-top:26px}
+.chword{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px 12px 18px;border-radius:20px;background:var(--navy);color:#fff}
+.chword .w{font-size:clamp(30px,8.6vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1}
+.chword .w mark{background:none;color:var(--lime)}
+.chword .r{font-size:14px;color:#AEB6DF;margin-top:4px;min-height:1.4em}
+.fsteps{position:relative;margin-top:10px;padding-left:26px}
+.fsteps .spine{position:absolute;left:9px;top:8px;bottom:30px;width:3px;background:repeating-linear-gradient(var(--grey2) 0 4px,transparent 4px 9px);border-radius:3px}
+.fsteps .runner{position:absolute;left:3px;top:0;width:15px;height:15px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(215,251,76,.4),0 0 0 1.5px var(--navy) inset;z-index:2}
+.fstep{display:flex;align-items:center;gap:10px;padding:8px 0}
+.fq{flex:1;min-width:0;padding:12px 14px;border-radius:16px;background:#F4F4F2;font-size:15px;font-weight:500;color:var(--navy);transition:background .3s,color .3s;line-height:1.25}
+.fq small{display:block;font-size:12px;color:var(--grey);font-weight:400;margin-top:2px}
+.fstep.cur .fq{background:var(--lav)}
+.fstep.no .fq{opacity:.45}
+.fyes{width:40px;height:3px;background:var(--grey2);position:relative;flex:none;border-radius:2px}
+.fyes i{position:absolute;inset:0;background:var(--olive);border-radius:2px;transform-origin:left;scale:0 1;transition:scale .4s}
+.fyes span{position:absolute;top:-17px;left:6px;font-size:10px;color:var(--grey);font-weight:600}
+.fstep.hit .fyes i{scale:1 1}
+.fres{width:58px;height:58px;border-radius:50%;flex:none;display:grid;place-items:center;background:#EDEDEA;color:var(--grey);font-weight:600;font-size:20px;letter-spacing:-.02em;transition:background .3s,color .3s,scale .45s cubic-bezier(.3,1.8,.5,1),box-shadow .3s}
+.fstep.hit .fres{background:var(--lime);color:var(--ink);scale:1.12;box-shadow:0 0 0 8px rgba(215,251,76,.35)}
+.why{margin:12px 0 0;padding:12px 14px;border-radius:16px;background:var(--lav);color:var(--navy);font-size:14.5px;display:flex;gap:10px;align-items:flex-start;min-height:3.4em}
+.why .ic{color:var(--peri);margin-top:2px;font-size:17px}
+.tip2{display:flex;gap:12px;align-items:flex-start;margin-top:12px;padding:16px;border-radius:22px;background:#fff}
+.tip2 .ti{width:40px;height:40px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:none;font-size:19px}
+.tip2 p{margin:0;font-size:15px;color:var(--grey)}
+.tip2 p b{color:var(--ink);font-weight:500}
+
+/* ===== DIPH ===== */
+.dph{margin-top:24px}
+.dpair{display:flex;align-items:center;justify-content:center;gap:clamp(10px,4vw,26px);margin:22px 0 6px;flex-wrap:wrap}
+.dl{display:flex;gap:6px}
+.dl span{width:clamp(56px,16vw,76px);height:clamp(68px,19vw,90px);border-radius:18px;background:#F1F1EF;display:grid;place-items:center;font-size:clamp(38px,11vw,52px);font-weight:600;color:var(--navy);transition:background .35s,color .35s}
+.dl span.hi{background:var(--navy);color:var(--lime)}
+.darr{font-size:26px;color:var(--grey2)}
+.dbub{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 16px;border-radius:20px;background:var(--lav);color:var(--navy);font-size:13px;min-width:108px;text-align:center}
+.dbub b{font-size:26px;font-weight:600;letter-spacing:-.02em}
+.dsound{width:84px;height:84px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:30px;font-weight:600;box-shadow:0 0 0 10px rgba(215,251,76,.32)}
+.dtrick{text-align:center;color:var(--grey);font-size:15px;max-width:34ch;margin:12px auto 0;min-height:2.9em}
+.dtrick b{color:var(--ink);font-weight:500}
+.exl{display:grid;gap:6px;margin-top:14px}
+.exr{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;border-radius:16px;background:#F7F7F5}
+.exr .t{flex:1;min-width:0}
+.exr .t b{font-size:18px;font-weight:600;color:var(--navy);letter-spacing:-.02em}
+.exr .t .tr{margin-left:8px}
+.exr .t small{display:block;font-size:12.5px;color:var(--grey)}
+.battle{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bt{border-radius:26px;padding:16px;display:flex;flex-direction:column;gap:8px;min-height:190px;position:relative;overflow:hidden}
+.bt.a{background:#2E2140;color:#fff}
+.bt.b{background:#3E8FD0;color:#fff}
+.bt .bi{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:19px}
+.bt .bw{font-size:clamp(32px,9vw,46px);font-weight:600;letter-spacing:-.03em;line-height:1;margin-top:auto;display:flex}
+.bt .bw span{display:inline-block}
+.bt .bw .sw{color:var(--lime)}
+.bt small{font-size:13px;opacity:.85}
+.swapcap{grid-column:1/-1;text-align:center;font-size:16px;color:var(--navy);font-weight:500;margin:6px 0 0}
+
+/* ===== LENGTH ===== */
+.lenc{margin-top:24px}
+.pairs{margin-top:14px}
+.lchart{position:relative;margin-top:14px}
+.lchart svg{width:100%;height:auto;display:block;overflow:visible}
+.ltip{position:absolute;background:var(--peri);color:#fff;border-radius:10px;padding:5px 9px;font-size:11.5px;font-weight:600;line-height:1.15;text-align:center;translate:-50% -100%;white-space:nowrap;pointer-events:none}
+.ltip.s{background:var(--dark);translate:-50% 0}
+.lwords{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+@media (min-width:600px){.lwords{grid-template-columns:1fr 1fr}}
+.lw{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;background:#F7F7F5}
+.lw .t{flex:1;min-width:0}
+.lw b{font-size:19px;font-weight:600;color:var(--navy);letter-spacing:-.02em;display:block;line-height:1.1}
+.lw small{display:block;font-size:12px;color:var(--grey);line-height:1.25}
+.lw .dotc{width:12px;height:12px}
+.rules2{display:grid;gap:10px;margin-top:12px}
+@media (min-width:760px){.rules2{grid-template-columns:1fr 1fr}}
+.rl h4{margin:0 0 10px;font-size:15px;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px}
+.rl ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.rl li{display:flex;align-items:center;gap:10px;font-size:15px;padding:9px 12px;border-radius:14px;background:#F7F7F5}
+.rl li code{font-family:"Urbanist",sans-serif;font-weight:700;color:var(--navy);min-width:98px;white-space:nowrap}
+.rl li span{color:var(--grey);font-size:14px}
+.rl li span b{color:var(--ink);font-weight:500}
+.punch{margin-top:12px;padding:20px;border-radius:28px;background:var(--navy);color:#fff;display:grid;gap:6px}
+.punch p{margin:0;font-size:17px;line-height:1.4;color:#C7CDEB}
+.punch p b{color:#fff;font-weight:600}
+.punch p .lm{color:var(--lime);font-weight:600}
+
+/* ===== UMLAUT venn ===== */
+.venn{margin-top:22px}
+.venn svg{width:100%;max-width:520px;height:auto;display:block;margin:0 auto}
+.venn text{font-family:var(--f)}
+.utxt{text-align:center;font-size:16px;color:var(--grey);max-width:34ch;margin:8px auto 0;min-height:2.9em}
+.utxt b{color:var(--ink);font-weight:500}
+
+/* ===== END rows ===== */
+.endl{display:grid;gap:6px;margin-top:22px}
+.er{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:18px;background:#fff}
+.er:nth-child(even){background:#F7F7F5}
+.er .t{flex:1;min-width:0}
+.er .w{font-size:22px;font-weight:600;color:var(--navy);letter-spacing:-.02em;line-height:1.1;display:flex;align-items:baseline;flex-wrap:wrap;gap:0 10px}
+.er .w .tail{display:inline-block;border-radius:7px;padding:0 1px;transition:background .3s,color .3s}
+.er.go .w .tail{background:var(--orange);color:#fff}
+.er .w .arrow{font-size:15px;color:var(--grey);font-weight:500;opacity:0;translate:-6px 0;transition:opacity .4s,translate .4s}
+.er.go .w .arrow{opacity:1;translate:0 0}
+.er .w .arrow b{color:var(--peri);font-weight:600}
+.er small{display:block;font-size:12.5px;color:var(--grey);margin-top:2px}
+.er .stamp{width:40px;height:40px;border-radius:50%;background:#F1F1EF;display:grid;place-items:center;font-weight:700;color:var(--grey2);font-size:16px;transition:background .3s,color .3s,scale .45s cubic-bezier(.3,1.8,.5,1);flex:none}
+.er.go .stamp{background:var(--lime);color:var(--ink);scale:1.08}
+
+/* ===== STRESS ===== */
+.strc{margin-top:24px}
+.syl{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:6px;margin-top:66px;flex-wrap:nowrap}
+.sy{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px}
+.sy .bx{min-width:clamp(52px,14vw,74px);padding:12px 8px;border-radius:16px;background:#F1F1EF;text-align:center;font-size:clamp(22px,6.4vw,32px);font-weight:600;color:var(--navy);letter-spacing:-.02em;transition:background .3s,color .3s}
+.sy.st .bx{background:var(--navy);color:var(--lime)}
+.sy .lvl{width:10px;border-radius:5px;background:var(--grey2);height:14px;transition:height .45s cubic-bezier(.3,1.6,.5,1),background .3s}
+.sy.st .lvl{height:44px;background:var(--peri)}
+.ball{position:absolute;left:0;top:-52px;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 1.5px var(--navy) inset,0 0 0 6px rgba(215,251,76,.35)}
+.stinfo{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding:12px 14px;border-radius:16px;background:#F7F7F5}
+.stinfo b{font-size:20px;color:var(--peri);font-weight:600}
+.stinfo small{display:block;font-size:13px;color:var(--grey)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{padding:7px 12px;border-radius:999px;background:#F1F1EF;font-size:14px;font-weight:600;color:var(--navy)}
+.chip.l{background:var(--lime)}
+.chip.p{background:var(--lav);color:var(--peri)}
+
+/* ===== READER (lime panel + phone) ===== */
+.limep{background:var(--lime);border-radius:36px;margin-inline:8px;padding:44px 0 0;overflow:hidden;position:relative}
+@media (min-width:760px){.limep{margin-inline:16px;padding-top:72px}}
+.limep .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:end}
+.limep .grid>*{min-width:0}
+@media (min-width:960px){.limep .grid{grid-template-columns:minmax(0,1fr) 400px}}
+.limep h2{margin:0;font-size:clamp(48px,14vw,104px);font-weight:500;letter-spacing:-.05em;line-height:.95;color:var(--ink)}
+.limep .sub{font-size:clamp(17px,4.6vw,21px);color:rgba(21,23,28,.55);margin:8px 0 18px}
+.limep .big2{font-size:clamp(20px,5.4vw,28px);color:var(--ink);letter-spacing:-.03em;margin:18px 0 0;max-width:22ch;line-height:1.2}
+.limep .faint{font-size:clamp(15px,4vw,18px);color:rgba(21,23,28,.35);margin:20px 0 32px}
+.ldots{position:absolute;inset:0;pointer-events:none}
+.ldots i{position:absolute;border-radius:50%;background:rgba(255,255,255,.35)}
+.phone{position:relative;width:min(100%,370px);margin:0 auto;background:#fff;border-radius:48px 48px 0 0;padding:14px 14px 18px;box-shadow:0 0 0 7px #fff,0 0 0 9px #E2E2DF,0 40px 80px -40px rgba(0,0,0,.4);z-index:1}
+.ph-status{display:flex;justify-content:space-between;align-items:center;padding:4px 18px 10px;font-size:13px;font-weight:600}
+.ph-status .isl{width:96px;height:26px;border-radius:999px;background:#111}
+.ph-status .ico{display:flex;gap:4px;align-items:center}
+.ph-status .ico i{display:block;width:16px;height:9px;border-radius:2px;background:#111}
+.ph-h{display:flex;align-items:center;gap:10px;padding:0 6px}
+.ph-h b{font-size:17px;font-weight:600}
+.ph-h .bell{margin-left:auto;width:36px;height:36px;border-radius:50%;background:#F1F1EF;display:grid;place-items:center;color:#555}
+.ph-h .av{width:34px;height:34px}
+.ph-h .av .sunlogo{font-size:24px}
+.ph-chips{margin:14px 0 0;padding:0 4px}
+.ph-word{margin-top:16px;padding:14px 12px 12px;border-radius:24px;background:#F7F7F5;min-height:150px}
+.ph-word .lbl{font-size:12px;color:var(--grey);text-align:center}
+.chunks{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 3px;margin-top:10px}
+.ck{display:flex;flex-direction:column;align-items:center;gap:4px}
+.ck b{font-size:clamp(24px,6.8vw,30px);font-weight:600;letter-spacing:-.02em;color:var(--navy);padding:2px 4px 4px;border-radius:9px;line-height:1.05;transition:background .25s,color .25s}
+.ck i{font-style:normal;font-size:13px;font-weight:600;color:var(--grey);min-height:1.2em;opacity:0;transition:opacity .3s}
+.ck .u{height:4px;width:100%;border-radius:2px}
+.ck.lit b{background:var(--navy);color:#fff}
+.ck.rd i{opacity:1}
+.ph-tr{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px}
+.ph-tr b{font-size:20px;font-weight:600;color:var(--peri)}
+.ph-tr small{font-size:13px;color:var(--grey)}
+.ph-don{display:grid;grid-template-columns:118px 1fr;gap:12px;align-items:center;margin-top:12px;padding:14px;border-radius:24px;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.ph-don svg{width:118px;height:118px;display:block}
+.ph-don .lg{display:grid;gap:4px;font-size:12px}
+.ph-don .lg div{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:8px;background:#F7F7F5}
+.ph-don .lg div:nth-child(even){background:#fff}
+.ph-don .lg span{flex:1;color:#555}
+.ph-don .lg b{font-weight:600;color:var(--navy)}
+.ph-don h5{grid-column:1/-1;margin:0;font-size:14px;font-weight:600;color:var(--navy)}
+.ph-don h5 small{font-weight:400;color:var(--grey);margin-left:6px}
+
+/* ===== VIDEO ===== */
+.vid{margin-top:22px}
+.vbox{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:16/10;background:#1D2654;margin-top:12px}
+@media (min-width:760px){.vbox{aspect-ratio:16/9}}
+.vbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.vbox::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,50,.35),rgba(15,20,50,.92) 88%)}
+.vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+.vplay{position:absolute;z-index:2;left:50%;top:44%;translate:-50% -50%;width:76px;height:76px;border-radius:50%;border:0;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-size:28px;box-shadow:0 0 0 14px rgba(215,251,76,.3),0 0 0 30px rgba(215,251,76,.12);animation:halo 2.4s ease-in-out infinite}
+@keyframes halo{50%{box-shadow:0 0 0 20px rgba(215,251,76,.22),0 0 0 42px rgba(215,251,76,.06)}}
+.vplay .ic{fill:currentColor;margin-left:4px}
+.vcap{position:absolute;z-index:2;left:20px;right:20px;bottom:18px;color:#fff}
+.vcap b{display:block;font-size:clamp(17px,4.6vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+.vcap small{display:block;font-size:13px;opacity:.8;margin-top:4px}
+.vtips{display:grid;gap:8px;margin-top:12px}
+@media (min-width:760px){.vtips{grid-template-columns:repeat(3,1fr)}}
+.vt{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:20px;background:#fff}
+.vt .n{width:30px;height:30px;border-radius:50%;background:var(--lav);color:var(--peri);display:grid;place-items:center;font-weight:700;font-size:13px;flex:none}
+.vt p{margin:0;font-size:14.5px;color:var(--grey)}
+.vt p b{color:var(--ink);font-weight:500}
+
+/* ===== PRACTICE ===== */
+.ex{margin-top:16px}
+.exh{display:flex;align-items:center;gap:12px}
+.exh .n{width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center;font-weight:700;flex:none}
+.exh h3{margin:0;font-size:20px;font-weight:600;color:var(--navy);letter-spacing:-.02em}
+.exh p{margin:0;font-size:13.5px;color:var(--grey)}
+.qbar{height:5px;border-radius:3px;background:#F1F1EF;margin-top:16px;overflow:hidden}
+.qbar i{display:block;height:100%;background:var(--peri);border-radius:3px;transition:width .4s}
+.qw{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px 0 4px}
+.qw b{font-size:clamp(44px,13vw,64px);font-weight:600;color:var(--navy);letter-spacing:-.04em;line-height:1}
+.qq{text-align:center;color:var(--grey);font-size:14px;margin:0}
+.opts{display:grid;gap:8px;margin-top:16px}
+@media (min-width:600px){.opts{grid-template-columns:repeat(3,1fr)}}
+.opt{border:0;padding:15px 16px;border-radius:18px;background:#F4F4F2;font-size:19px;font-weight:600;color:var(--navy);text-align:center;transition:background .25s,color .25s,scale .25s}
+.opt:hover{background:#ECECEA}
+.opt.ok{background:var(--lime);color:var(--ink)}
+.opt.bad{background:var(--orange);color:#fff}
+.opt:disabled{cursor:default}
+.qx{margin-top:12px;padding:14px;border-radius:18px;background:var(--lav);color:var(--navy);font-size:15px;display:flex;gap:10px;align-items:flex-start;min-height:3.6em}
+.qx .ic{color:var(--peri);font-size:18px;margin-top:2px}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}
+.done{text-align:center;padding:10px 0 4px}
+.ring{width:150px;height:150px;margin:6px auto 0;position:relative}
+.ring svg{width:100%;height:100%;rotate:-90deg}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:40px;font-weight:600;color:var(--navy);letter-spacing:-.04em}
+.done p{color:var(--grey);margin:10px auto 16px;max-width:30ch}
+.lens{display:grid;gap:6px;margin-top:16px}
+.lr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 10px 10px 16px;border-radius:18px;background:#F7F7F5}
+.lr .w{flex:1;min-width:90px;font-size:21px;font-weight:600;color:var(--navy);letter-spacing:-.02em}
+.seg{display:inline-flex;padding:3px;border-radius:999px;background:#E9E9E6}
+.seg button{border:0;background:none;padding:8px 13px;border-radius:999px;font-size:13.5px;font-weight:600;color:#5A5D66;transition:background .2s,color .2s}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.lr .res{flex-basis:100%;font-size:13.5px;color:var(--grey);display:none;gap:8px;align-items:flex-start}
+.lr.checked .res{display:flex}
+.lr.right{background:#F2FBD9}
+.lr.wrong{background:#FCE7DF}
+.lr .res .ic{margin-top:2px}
+.lr.right .res .ic{color:var(--olive)}
+.lr.wrong .res .ic{color:var(--orange)}
+.sts{display:grid;gap:8px;margin-top:16px}
+.st-row{padding:12px 14px;border-radius:18px;background:#F7F7F5}
+.st-row .sb{display:flex;gap:5px;flex-wrap:wrap}
+.st-row .sb button{border:0;padding:10px 12px;border-radius:12px;background:#fff;font-size:18px;font-weight:600;color:var(--navy);box-shadow:inset 0 0 0 1px var(--line);transition:background .2s,color .2s}
+.st-row .sb button[aria-pressed="true"]{background:var(--navy);color:var(--lime)}
+.st-row .sb button.ans{box-shadow:inset 0 0 0 2px var(--olive)}
+.st-row.right{background:#F2FBD9}
+.st-row.wrong{background:#FCE7DF}
+.st-row .res{display:none;margin-top:8px;font-size:13.5px;color:var(--grey);gap:8px}
+.st-row.checked .res{display:flex}
+.ex-foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.ex-foot .score{margin-left:auto;font-size:14px;font-weight:600;color:var(--navy)}
+.conf{position:fixed;width:10px;height:10px;border-radius:50%;pointer-events:none;z-index:60}
+
+/* ===== CHEAT ===== */
+.cheat{display:grid;gap:12px;margin-top:24px}
+@media (min-width:900px){.cheat{grid-template-columns:1.25fr .75fr}}
+.ch-h{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ch-h .lg{width:40px;height:40px;border-radius:50%;background:var(--lime);display:grid;place-items:center;color:var(--navy)}
+.ch-h .lg .sunlogo{font-size:28px}
+.ch-h b{font-size:22px;font-weight:500;letter-spacing:-.03em;color:var(--navy)}
+.cr{display:grid;grid-template-columns:auto 72px 1fr auto;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;font-size:15px}
+.cr:nth-child(odd){background:#F7F7F5}
+.cr code{font-family:"Urbanist",sans-serif;font-weight:700;color:var(--navy);font-size:16px}
+.cr .s{font-weight:600;color:var(--peri)}
+.cr .e{font-size:13.5px;color:var(--grey);text-align:right}
+.kv{display:grid;gap:0}
+.kv div{padding:12px 4px;border-bottom:1px solid var(--line)}
+.kv small{display:block;font-size:12.5px;font-weight:600;color:var(--navy)}
+.kv span{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--grey);margin-top:2px}
+.kv svg{width:110px;height:26px}
+
+/* ===== FINAL fisheye ===== */
+.fin{padding:6px 8px 0}
+@media (min-width:760px){.fin{padding:10px 16px 0}}
+.eye{position:relative;height:min(92svh,820px);min-height:560px;border-radius:34px;overflow:hidden;display:grid;place-items:center;text-align:center;color:#fff;
+  background:radial-gradient(ellipse at 50% 40%,#8DB7DA 0%,#5E97C6 45%,#3F7FB5 75%,#2F6A9A 100%)}
+.eye .cl{position:absolute;border-radius:50%;background:#fff;filter:blur(28px);opacity:.5}
+.eye .grass{position:absolute;left:50%;top:50%;width:200vmax;height:200vmax;translate:-50% -50%;filter:blur(.7px);
+  background:repeating-conic-gradient(from 0deg,#3C6A1E 0deg .6deg,#5F9230 .6deg 1.3deg,#2E5517 1.3deg 1.9deg,#76A63A 1.9deg 2.4deg,#467A22 2.4deg 3deg);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 20vmax,#000 25vmax);mask-image:radial-gradient(circle at 50% 50%,transparent 0 20vmax,#000 25vmax)}
+@media (min-width:760px){.eye .grass{-webkit-mask-image:radial-gradient(circle at 50% 50%,transparent 0 33vmax,#000 39vmax);mask-image:radial-gradient(circle at 50% 50%,transparent 0 33vmax,#000 39vmax)}}
+.eye .in{position:relative;z-index:2}
+.eye h2{margin:0;font-size:clamp(50px,15vw,128px);font-weight:500;letter-spacing:-.05em;line-height:1;color:rgba(255,255,255,.92)}
+.eye .logo{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-size:clamp(30px,8vw,52px);letter-spacing:-.04em;color:rgba(255,255,255,.88)}
+.eye .logo .sunlogo{font-size:1.2em}
+.ring-dots{position:absolute;left:50%;top:50%;width:min(92vw,620px);aspect-ratio:1;translate:-50% -50%;z-index:1;pointer-events:none}
+.ring-dots i{position:absolute;border-radius:50%;background:var(--lime)}
+.after{text-align:center;padding:60px var(--gut) 40px}
+.after .post{max-width:520px;margin:0 auto;text-align:left;min-height:0}
+.halo{position:relative;width:min(78vw,340px);aspect-ratio:1;margin:70px auto 30px;border-radius:50%;background:radial-gradient(circle at 45% 40%,#E6FF7A,var(--lime) 60%,#C6EE33);display:grid;place-items:center;text-align:center;box-shadow:0 0 0 28px rgba(215,251,76,.3),0 0 0 60px rgba(215,251,76,.12)}
+.halo b{display:block;font-size:clamp(26px,7vw,36px);font-weight:500;letter-spacing:-.04em;color:var(--navy);line-height:1.05}
+.halo small{display:block;color:rgba(21,23,28,.55);margin:8px 0 16px}
+footer{text-align:center;padding:30px var(--gut) 50px;color:var(--grey);font-size:13.5px}
+footer .brand{justify-content:center;margin-bottom:8px}
+
+/* ===== voice picker ===== */
+.vbtn{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--navy);color:#fff;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600}
+.vbtn .ic{color:var(--lime)}
+.vbtn .fl{font-size:11px;background:var(--lime);color:var(--ink);border-radius:999px;padding:2px 7px;font-weight:700}
+.vscrim{position:fixed;inset:0;background:rgba(21,23,28,.32);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s}
+.vscrim.on{opacity:1;pointer-events:auto}
+.vpanel{position:fixed;z-index:71;left:8px;right:8px;bottom:8px;max-height:84svh;overflow:auto;background:#fff;border-radius:32px;padding:20px 18px 18px;box-shadow:0 30px 80px -20px rgba(29,38,84,.45);translate:0 110%;transition:translate .45s cubic-bezier(.2,.9,.2,1);overscroll-behavior:contain}
+.vpanel.on{translate:0 0}
+@media (min-width:760px){.vpanel{left:auto;right:24px;top:72px;bottom:auto;width:400px;translate:0 -12px;opacity:0;pointer-events:none;transition:translate .3s,opacity .3s}.vpanel.on{translate:0 0;opacity:1;pointer-events:auto}}
+.vpanel .grab{width:40px;height:4px;border-radius:2px;background:var(--grey2);margin:-8px auto 12px}
+@media (min-width:760px){.vpanel .grab{display:none}}
+.vpanel h3{margin:0;font-size:22px;font-weight:500;letter-spacing:-.03em;color:var(--navy)}
+.vpanel .sub{margin:2px 0 14px;font-size:13.5px;color:var(--grey)}
+.vlbl{font-size:12px;font-weight:600;color:var(--navy);margin:14px 0 8px;display:flex;justify-content:space-between}
+.vlbl span{font-weight:400;color:var(--grey)}
+.dials{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.dial{border:0;border-radius:18px;background:#F4F4F2;padding:12px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;transition:background .2s}
+.dial .fg{width:30px;height:20px;border-radius:5px;overflow:hidden;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.dial b{font-size:13.5px;font-weight:600;color:var(--navy)}
+.dial small{font-size:11px;color:var(--grey)}
+.dial[aria-pressed="true"]{background:var(--lime)}
+.vlist{display:grid;gap:4px;max-height:200px;overflow:auto;border-radius:16px}
+.vopt{border:0;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:#F7F7F5;text-align:left;font-size:14px}
+.vopt .dotc{background:var(--grey2)}
+.vopt span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+.vopt small{font-size:11px;color:var(--grey)}
+.vopt[aria-pressed="true"]{background:var(--lav)}
+.vopt[aria-pressed="true"] .dotc{background:var(--peri)}
+.vnote{font-size:12.5px;color:var(--grey);margin:8px 2px 0;line-height:1.35}
+.vnote b{color:var(--orange);font-weight:600}
+.vrate{display:flex;gap:6px}
+.vrate button{flex:1;border:0;border-radius:999px;background:#F4F4F2;padding:10px 0;font-size:13.5px;font-weight:600;color:var(--navy)}
+.vrate button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.vtest{display:flex;align-items:center;gap:10px;margin-top:16px;padding:12px 12px 12px 16px;border-radius:18px;background:var(--navy);color:#fff}
+.vtest .t{flex:1;min-width:0}
+.vtest b{display:block;font-size:17px;font-weight:600}
+.vtest small{display:block;font-size:12px;color:#AEB6DF}
+.vtest .say{background:var(--lime);color:var(--ink)}
+.vdone{width:100%;margin-top:10px}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+@font-face{font-family:"Urbanist";font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/fonts/urbanist-latinext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+[lang="tr"]{font-family:"Urbanist",system-ui,sans-serif}
+.hero-card{background:#8FC0E0}
+.hero-top p,.hero-bl{text-shadow:0 1px 14px rgba(20,50,80,.45)}
+.hero-top h1{text-shadow:0 2px 26px rgba(20,50,80,.3)}
+.hero-top h1 .peri{color:#2E3FB8}
+.steam{transform-box:fill-box;transform-origin:center}
+
+/* sound donut */
+.sdon{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center;margin-top:16px}
+@media (max-width:380px){.sdon{grid-template-columns:120px 1fr}}
+.sdon svg{width:100%;height:auto;display:block;rotate:-90deg}
+.sdon .lg{display:grid;gap:6px}
+.sdon .lg div{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:14px;background:#F7F7F5;font-size:14px}
+.sdon .lg span{flex:1;color:#555}
+.sdon .lg b{font-size:18px;color:var(--navy)}
+.sdon .lg small{display:block;font-size:12px;color:var(--grey)}
+.letters{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.letters span{min-width:38px;padding:8px 0;text-align:center;border-radius:12px;font-weight:600;font-size:18px;background:#F1F1EF;color:var(--navy)}
+.letters span.v{background:var(--lime);color:var(--ink)}
+.letters span.s{background:var(--orange);color:#fff}
+.letters span.z{background:var(--lav);color:var(--peri)}
+
+/* vowel builder */
+.vb{margin-top:24px}
+.vbq{display:grid;gap:10px;margin-top:14px}
+.vbq .row2{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.vbq .row2 b{font-size:14px;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px}
+.vbq .row2 b .ic{color:var(--peri)}
+.vbq .seg button{font-size:13.5px}
+.vres{display:flex;align-items:center;gap:16px;margin-top:16px;padding:16px;border-radius:24px;background:var(--navy);color:#fff}
+.vres .bigv{width:92px;height:92px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-size:56px;font-weight:600;flex:none;box-shadow:0 0 0 10px rgba(215,251,76,.25)}
+.vres .t{flex:1;min-width:0}
+.vres .t b{display:block;font-size:20px;font-weight:600}
+.vres .t small{display:block;font-size:13px;color:#AEB6DF;margin-top:2px}
+.vres .say{background:rgba(255,255,255,.14);color:#fff}
+.cube{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.cside h5{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--grey);text-transform:uppercase;text-align:center}
+.cgrid{display:grid;grid-template-columns:auto 1fr 1fr;gap:4px;align-items:center}
+.cgrid .h{font-size:10.5px;color:var(--grey);text-align:center;line-height:1.1}
+.cgrid .rh{writing-mode:vertical-rl;rotate:180deg;font-size:10.5px;color:var(--grey)}
+.cgrid button{border:0;aspect-ratio:1;border-radius:16px;background:#F1F1EF;font-size:clamp(26px,8vw,36px);font-weight:600;color:var(--navy);transition:background .25s,color .25s,scale .3s}
+.cgrid button.on{background:var(--peri);color:#fff;scale:1.06}
+
+/* harmony conveyor */
+.hc{margin-top:24px}
+.hstage{position:relative;margin-top:30px;display:flex;justify-content:center}
+.hword{display:flex;gap:3px;position:relative}
+.hl2{width:clamp(34px,10vw,46px);height:clamp(46px,13vw,58px);border-radius:12px;background:#F1F1EF;display:grid;place-items:center;font-size:clamp(24px,7vw,32px);font-weight:600;color:var(--navy);transition:background .25s,color .25s}
+.hl2.vw{background:#E9ECFD;color:var(--peri)}
+.hl2.last{background:var(--peri);color:#fff}
+.hl2.suf{background:var(--lime);color:var(--ink)}
+.scan{position:absolute;top:-26px;left:0;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 1.5px var(--navy) inset,0 0 0 6px rgba(215,251,76,.35)}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}
+.door{border-radius:20px;padding:12px 14px;background:#F4F4F2;transition:background .3s,scale .4s cubic-bezier(.3,1.6,.5,1)}
+.door b{display:block;font-size:24px;font-weight:600;color:var(--navy);letter-spacing:-.02em}
+.door small{display:block;font-size:12.5px;color:var(--grey)}
+.door.on{background:var(--lime);scale:1.03}
+.door.on small{color:rgba(21,23,28,.6)}
+.doors.four{grid-template-columns:repeat(4,1fr);gap:6px}
+.doors.four .door{padding:10px 6px;text-align:center}
+.doors.four .door b{font-size:28px}
+.hres{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding:12px 14px;border-radius:18px;background:#F7F7F5}
+.hres b{font-size:20px;color:var(--peri);font-weight:600}
+.hres small{display:block;font-size:13px;color:var(--grey)}
+
+/* consonant pairs */
+.pairs2{display:grid;gap:8px;margin-top:24px}
+@media (min-width:760px){.pairs2{grid-template-columns:1fr 1fr}}
+.pr{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:6px}
+.pc{border-radius:22px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;position:relative;overflow:hidden;border:0;text-align:left}
+.pc.vz{background:var(--navy);color:#fff}
+.pc.vl{background:#fff;color:var(--navy)}
+.pc .L{font-size:34px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.pc .w{font-size:15px;font-weight:600;margin-top:6px}
+.pc small{font-size:12px;opacity:.75}
+.pc .wave{position:absolute;right:10px;top:12px;width:44px;height:18px}
+.pc .wave path{fill:none;stroke-width:2;stroke-linecap:round}
+.pc.vz .wave path{stroke:var(--lime)}
+.pc.vl .wave path{stroke:var(--grey2)}
+.vs{display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--grey)}
+.thr{display:flex;gap:12px;align-items:center;margin-top:12px;padding:16px;border-radius:22px;background:#fff}
+.thr .ti{width:44px;height:44px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:20px;flex:none}
+.thr p{margin:0;font-size:15px;color:var(--grey)}
+.thr p b{color:var(--ink);font-weight:500}
+
+/* fıstıkçı şahap */
+.fs{margin-top:24px;border-radius:32px;background:var(--navy);color:#fff;padding:22px 18px}
+.fsw{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;margin-top:10px}
+.fsw .gap{width:14px}
+.fsw span{font-size:clamp(30px,9.4vw,56px);font-weight:600;letter-spacing:-.02em;color:rgba(255,255,255,.28);transition:color .3s,translate .3s,background .3s;padding:0 2px;border-radius:8px;line-height:1.15}
+.fsw span.c{color:#fff}
+.fsw span.c.on{color:var(--ink);background:var(--lime);translate:0 -6px}
+.fs p{margin:14px auto 0;max-width:36ch;text-align:center;color:#C7CDEB;font-size:15px}
+.fs p b{color:#fff;font-weight:600}
+.fs .keys{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;margin-top:12px}
+.fs .keys span{width:32px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center;font-weight:700;font-size:18px;color:var(--lime)}
+
+/* soften rows */
+.softl{display:grid;gap:6px;margin-top:22px}
+.sr{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:18px;background:#fff}
+.sr:nth-child(even){background:#F7F7F5}
+.sr .t{flex:1;min-width:0}
+.sr .w{font-size:22px;font-weight:600;color:var(--navy);letter-spacing:-.02em;line-height:1.15;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px}
+.sr .w .base{display:inline-flex}
+.sr .fl{display:inline-grid}
+.sr .fl i{grid-area:1/1;font-style:normal;transition:opacity .35s,translate .35s}
+.sr .fl .b2{opacity:0;translate:0 -60%;color:var(--orange)}
+.sr.go .fl .a2{opacity:0;translate:0 60%}
+.sr.go .fl .b2{opacity:1;translate:0 0}
+.sr .sx{color:var(--peri);opacity:0;translate:-10px 0;transition:opacity .35s .25s,translate .35s .25s;display:inline-block}
+.sr.go .sx{opacity:1;translate:0 0}
+.sr small{display:block;font-size:12.5px;color:var(--grey);margin-top:2px}
+.sr .tag{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:700;font-size:14px;background:#F1F1EF;color:var(--grey2);transition:background .3s,color .3s,scale .4s cubic-bezier(.3,1.8,.5,1)}
+.sr.go .tag{background:var(--lime);color:var(--ink);scale:1.08}
+.sr.mono .tag{background:#F1F1EF;color:var(--grey);scale:1}
+
+/* buffers */
+.buf{margin-top:24px}
+.bstage{position:relative;height:130px;display:flex;align-items:center;justify-content:center;margin-top:14px}
+.bstage .bw{display:flex;align-items:center}
+.bstage .stem,.bstage .sfx,.bstage .bl3{font-size:clamp(36px,11vw,54px);font-weight:600;letter-spacing:-.02em;line-height:1;padding:10px 6px;border-radius:14px}
+.bstage .stem{color:var(--navy)}
+.bstage .stem i{font-style:normal;color:var(--peri)}
+.bstage .sfx{color:var(--peri);background:var(--lav)}
+.bstage .bl3{background:var(--lime);color:var(--ink);margin:0 2px}
+.boom{position:absolute;top:10px;left:50%;translate:-50% 0;font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.08em;opacity:0}
+.crowd{display:grid;gap:6px;margin-top:12px}
+.cr2{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;background:#fff}
+.cr2 .t{flex:1;min-width:0}
+.cr2 .w{font-size:20px;font-weight:600;color:var(--navy)}
+.cr2 .w em{font-style:normal;color:var(--orange)}
+.cr2 small{display:block;font-size:12.5px;color:var(--grey)}
+
+/* suffix lab phone */
+.lab-base{margin-top:12px}
+.lab-word{margin-top:12px;padding:16px 12px;border-radius:24px;background:#F7F7F5;text-align:center}
+.lab-word .res{font-size:clamp(30px,9vw,40px);font-weight:600;color:var(--navy);letter-spacing:-.02em;line-height:1.1}
+.lab-word .res span{border-radius:8px;padding:0 2px}
+.lab-word .res .x{background:var(--lime);color:var(--ink)}
+.lab-word .res .sf{color:var(--peri)}
+.lab-word .res .ch{background:var(--orange);color:#fff}
+.lab-word .tr3{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px}
+.lab-word .tr3 b{font-size:17px;color:var(--peri);font-weight:600}
+.lab-word .mean{font-size:13px;color:var(--grey);margin-top:4px}
+.lsteps{display:grid;gap:6px;margin-top:10px}
+.ls{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:13px;color:#555}
+.ls .n{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:700;font-size:12px;color:#fff}
+.ls b{color:var(--navy)}
+.phone .tabs{margin-top:8px}
+
+/* exercise helpers */
+.seg button[lang=tr]{font-size:16px;padding:6px 12px;font-family:Urbanist,sans-serif}
+.cr .e{font-family:Urbanist,sans-serif}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-volume-2" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+<symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+<symbol id="i-rotate-ccw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+<symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-circle-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></symbol>
+<symbol id="i-type" viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></symbol>
+<symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></symbol>
+<symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+<symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+<symbol id="i-swords" viewBox="0 0 24 24"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/></symbol>
+<symbol id="i-magnet" viewBox="0 0 24 24"><path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15"/><path d="m5 8 4 4"/><path d="m12 15 4 4"/></symbol>
+<symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+<symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></symbol>
+<symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-wind" viewBox="0 0 24 24"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></symbol>
+<symbol id="sun" viewBox="-50 -50 100 100"><circle cx="0" cy="0" r="5.2"/><circle cx="2.38" cy="13.80" r="3.60"/><circle cx="-8.07" cy="11.44" r="3.60"/><circle cx="-13.80" cy="2.38" r="3.60"/><circle cx="-11.44" cy="-8.07" r="3.60"/><circle cx="-2.38" cy="-13.80" r="3.60"/><circle cx="8.07" cy="-11.44" r="3.60"/><circle cx="13.80" cy="-2.38" r="3.60"/><circle cx="11.44" cy="8.07" r="3.60"/><circle cx="-20.03" cy="14.96" r="3.10"/><circle cx="-24.54" cy="4.79" r="3.10"/><circle cx="-24.19" cy="-6.33" r="3.10"/><circle cx="-19.04" cy="-16.20" r="3.10"/><circle cx="-10.13" cy="-22.86" r="3.10"/><circle cx="0.79" cy="-24.99" r="3.10"/><circle cx="11.55" cy="-22.17" r="3.10"/><circle cx="20.03" cy="-14.96" r="3.10"/><circle cx="24.54" cy="-4.79" r="3.10"/><circle cx="24.19" cy="6.33" r="3.10"/><circle cx="19.04" cy="16.20" r="3.10"/><circle cx="10.13" cy="22.86" r="3.10"/><circle cx="-0.79" cy="24.99" r="3.10"/><circle cx="-11.55" cy="22.17" r="3.10"/><circle cx="-32.28" cy="-15.93" r="2.50"/><circle cx="-25.78" cy="-25.13" r="2.50"/><circle cx="-16.75" cy="-31.86" r="2.50"/><circle cx="-6.09" cy="-35.48" r="2.50"/><circle cx="5.17" cy="-35.63" r="2.50"/><circle cx="15.93" cy="-32.28" r="2.50"/><circle cx="25.13" cy="-25.78" r="2.50"/><circle cx="31.86" cy="-16.75" r="2.50"/><circle cx="35.48" cy="-6.09" r="2.50"/><circle cx="35.63" cy="5.17" r="2.50"/><circle cx="32.28" cy="15.93" r="2.50"/><circle cx="25.78" cy="25.13" r="2.50"/><circle cx="16.75" cy="31.86" r="2.50"/><circle cx="6.09" cy="35.48" r="2.50"/><circle cx="-5.17" cy="35.63" r="2.50"/><circle cx="-15.93" cy="32.28" r="2.50"/><circle cx="-25.13" cy="25.78" r="2.50"/><circle cx="-31.86" cy="16.75" r="2.50"/><circle cx="-35.48" cy="6.09" r="2.50"/><circle cx="-35.63" cy="-5.17" r="2.50"/><circle cx="-5.16" cy="-45.71" r="1.90"/><circle cx="5.93" cy="-45.62" r="1.90"/><circle cx="16.67" cy="-42.87" r="1.90"/><circle cx="26.45" cy="-37.64" r="1.90"/><circle cx="34.69" cy="-30.21" r="1.90"/><circle cx="40.91" cy="-21.03" r="1.90"/><circle cx="44.75" cy="-10.63" r="1.90"/><circle cx="46.00" cy="0.39" r="1.90"/><circle cx="44.57" cy="11.39" r="1.90"/><circle cx="40.55" cy="21.72" r="1.90"/><circle cx="34.17" cy="30.79" r="1.90"/><circle cx="25.81" cy="38.08" r="1.90"/><circle cx="15.95" cy="43.15" r="1.90"/><circle cx="5.16" cy="45.71" r="1.90"/><circle cx="-5.93" cy="45.62" r="1.90"/><circle cx="-16.67" cy="42.87" r="1.90"/><circle cx="-26.45" cy="37.64" r="1.90"/><circle cx="-34.69" cy="30.21" r="1.90"/><circle cx="-40.91" cy="21.03" r="1.90"/><circle cx="-44.75" cy="10.63" r="1.90"/><circle cx="-46.00" cy="-0.39" r="1.90"/><circle cx="-44.57" cy="-11.39" r="1.90"/><circle cx="-40.55" cy="-21.72" r="1.90"/><circle cx="-34.17" cy="-30.79" r="1.90"/><circle cx="-25.81" cy="-38.08" r="1.90"/><circle cx="-15.95" cy="-43.15" r="1.90"/></symbol><symbol id="bln" viewBox="0 0 40 56"><path d="M20 2C9 2 2 10 2 20c0 10 9 17 13 23h10c4-6 13-13 13-23C38 10 31 2 20 2z" fill="currentColor"/><path d="M20 2c-5 0-8 9-8 18s3 17 5 23M20 2c5 0 8 9 8 18s-3 17-5 23" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.6"/><path d="M15 43l1 6M25 43l-1 6" stroke="#5a4632" stroke-width="1"/><rect x="15" y="48" width="10" height="7" rx="1.5" fill="#8a6a45"/></symbol>
+</svg>
+
+<div class="rail idle" id="rail" aria-hidden="true">
+  <div class="rail-track"><div class="rail-fill" id="railFill"></div></div>
+  <div id="railTicks"></div>
+  <div class="rail-thumb" id="railThumb"><svg class="sunlogo" id="railSun"><use href="#sun"/></svg></div>
+  <div class="rail-tip" id="railTip"><b>01</b><span>Старт</span></div>
+</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#start" aria-label="Sesler, наверх"><svg class="sunlogo"><use href="#sun"/></svg><b lang="tr">sesler</b></a>
+    <nav class="top-r">
+      <button class="vbtn" id="vOpen" aria-haspopup="dialog" aria-controls="vpanel"><svg class="ic"><use href="#i-headphones"/></svg><span>Озвучка</span><span class="fl">TR</span></button>
+      <a class="tab" aria-selected="true" href="#practice">Практика</a>
+    </nav>
+  </div>
+  <div class="prog" id="prog"></div>
+</header>
+
+<div class="vscrim" id="vScrim"></div>
+<div class="vpanel" id="vpanel" role="dialog" aria-modal="true" aria-labelledby="vpTitle" aria-hidden="true">
+  <div class="grab"></div>
+  <div class="card-h" style="align-items:center"><div><h3 id="vpTitle">Озвучка</h3></div><button class="navb" id="vClose" aria-label="Закрыть"><svg class="ic"><use href="#i-x"/></svg></button></div>
+  <p class="sub">Выбери голос и скорость. Для гласных лучше медленно: слышно губы.</p>
+  <div class="vlbl">Голос <span id="vCount"></span></div>
+  <div class="vlist" id="vList"></div>
+  <p class="vnote" id="vNote"></p>
+  <div class="vlbl">Скорость</div>
+  <div class="vrate" id="vRate">
+    <button data-r=".6" aria-pressed="false">Медленно</button>
+    <button data-r=".85" aria-pressed="true">Обычно</button>
+    <button data-r="1" aria-pressed="false">Как турок</button>
+  </div>
+  <div class="vtest"><div class="t"><b lang="tr">Kitaplar, evler.</b><small>«китаплар, эвлер» · книги, дома</small></div><button class="say" data-say="Kitaplar, evler." aria-label="Проверить голос"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
+  <button class="btn vdone" id="vDone">Готово</button>
+</div>
+
+<main>
+<!-- HERO: Pamukkale -->
+<section class="hero" id="start" data-rail="Старт" style="padding-bottom:0">
+  <div class="hero-card">
+    <svg class="land" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4F8FC4"/><stop offset=".4" stop-color="#9CC8E6"/><stop offset=".6" stop-color="#E4F0F4"/></linearGradient>
+        <radialGradient id="gSun"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="#FFFBEA" stop-opacity=".9"/><stop offset=".6" stop-color="#FFF4CC" stop-opacity=".3"/><stop offset="1" stop-color="#FFF4CC" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gPool" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8EE0E4"/><stop offset="1" stop-color="#3DB3C4"/></linearGradient>
+        <linearGradient id="gTier" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFAF6"/><stop offset="1" stop-color="#DCD6C8"/></linearGradient>
+        <pattern id="drips" width="9" height="40" patternUnits="userSpaceOnUse"><rect width="9" height="40" fill="none"/><path d="M4 0 V30" stroke="#CFC8B6" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></pattern>
+        <filter id="fGrain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0"/></filter>
+      </defs>
+      <rect width="400" height="700" fill="url(#gSky)"/>
+      <g id="pSun"><g class="intro-sun">
+        <circle cx="300" cy="170" r="210" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width="40"/>
+        <circle cx="300" cy="170" r="150" fill="url(#gSun)"/>
+        <circle cx="300" cy="170" r="11" fill="#fff"/>
+      </g></g>
+      <g id="pFar"><path class="intro-far" d="M0 400 C50 370 100 384 150 366 C200 350 250 376 300 360 C340 348 370 360 400 352 V700 H0Z" fill="#9FB4A6"/></g>
+      <g id="pMid"><g class="intro-mid">
+        <path d="M0 430 C80 410 160 424 240 408 C310 396 360 410 400 404 V700 H0Z" fill="#B6C2A2"/>
+        <ellipse cx="80" cy="452" rx="70" ry="8" fill="url(#gPool)"/><ellipse cx="230" cy="446" rx="90" ry="9" fill="url(#gPool)"/><ellipse cx="360" cy="450" rx="50" ry="7" fill="url(#gPool)"/>
+        <path d="M0 456 C40 452 60 462 100 458 C150 452 180 462 220 454 C270 446 320 460 400 454 V700 H0Z" fill="url(#gTier)"/>
+        <rect x="0" y="458" width="400" height="40" fill="url(#drips)"/>
+      </g></g>
+      <g id="pNear"><g class="intro-near">
+        <ellipse cx="60" cy="512" rx="80" ry="11" fill="url(#gPool)"/><ellipse cx="210" cy="506" rx="80" ry="10" fill="url(#gPool)"/><ellipse cx="350" cy="512" rx="70" ry="10" fill="url(#gPool)"/>
+        <path d="M0 516 C40 510 90 524 130 516 C170 508 190 520 250 512 C300 506 340 520 400 514 V700 H0Z" fill="url(#gTier)"/>
+        <rect x="0" y="518" width="400" height="46" fill="url(#drips)"/>
+        <ellipse cx="120" cy="578" rx="110" ry="13" fill="url(#gPool)"/><ellipse cx="320" cy="572" rx="100" ry="12" fill="url(#gPool)"/>
+        <path d="M0 582 C60 576 120 590 200 582 C260 574 330 588 400 578 V700 H0Z" fill="url(#gTier)"/>
+        <rect x="0" y="584" width="400" height="50" fill="url(#drips)"/>
+        <ellipse cx="200" cy="648" rx="200" ry="16" fill="url(#gPool)"/>
+        <path d="M0 652 C80 646 160 660 240 652 C300 646 360 656 400 650 V700 H0Z" fill="url(#gTier)"/>
+        <g fill="#fff" opacity=".7"><ellipse class="steam" cx="230" cy="436" rx="20" ry="6"/><ellipse class="steam" cx="70" cy="498" rx="16" ry="5"/><ellipse class="steam" cx="330" cy="560" rx="22" ry="6"/></g>
+      </g></g>
+      <rect width="400" height="700" filter="url(#fGrain)" opacity=".16"/>
+    </svg>
+    <div class="pollen" id="pollen"></div>
+    <div class="hero-top hero-intro">
+      <h1><span class="ln">Гласные дружат.</span><span class="peri">Согласные спорят.</span></h1>
+      <p>8 гласных, 21 согласная и пара законов, на которых держится весь турецкий.</p>
+      <a class="btn lime" href="#story">Послушать звуки</a>
+    </div>
+    <p class="hero-bl hero-intro">Знаешь эти законы, и окончание само подбирается. Как бассейны Памуккале: вода сама знает, куда течь.</p>
+    <div class="notch">
+      <div class="stat"><b>8</b><small>гласных</small></div>
+      <div class="stat"><b>21</b><small>согласная</small></div>
+      <div class="stat"><b>2</b><small>гармонии<br>гласных</small></div>
+      <div class="stat"><b>8</b><small>глухих:<br>Fıstıkçı Şahap</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" data-rail="История">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">00</span> История</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>1 мин</span></div>
+    <h2 class="h2 split-h">Как я покупал <span class="peri">книги.</span></h2>
+    <p class="lead"><b>Три слайда.</b> Листай вбок. Тут вся гармония гласных за минуту.</p>
+    <div class="feed" id="feed">
+      <article class="card post">
+        <div class="post-h"><span class="av"><svg class="sunlogo"><use href="#sun"/></svg></span><div><b>Тимур</b><small>книжный, Кадыкёй</small></div><span class="ix">1 / 3</span></div>
+        <p>Захожу в книжный. Хочу две книги.</p>
+        <p>Слово «книга» я знаю: <span class="de" lang="tr">kitap</span>. Множественное число тоже знаю. Вроде.</p>
+        <p class="k">Говорю продавцу, <span lang="tr">iki kitapler</span>.</p>
+      </article>
+      <article class="card post">
+        <div class="post-h"><span class="av"><svg class="sunlogo"><use href="#sun"/></svg></span><div><b>Тимур</b><small>книжный, Кадыкёй</small></div><span class="ix">2 / 3</span></div>
+        <p>Он говорит, <span class="de" lang="tr">kitaplar</span>.</p>
+        <p>Говорю, да-да, <span lang="tr">kitapler</span>. Он громче, <span lang="tr">kitapLAR</span>.</p>
+        <p>Я тоже громче, <span lang="tr">kitapLER</span>.</p>
+        <p class="k">Стоим, кричим друг на друга. Два взрослых человека.</p>
+      </article>
+      <article class="card post">
+        <div class="post-h"><span class="av"><svg class="sunlogo"><use href="#sun"/></svg></span><div><b>Тимур</b><small>книжный, Кадыкёй</small></div><span class="ix">3 / 3</span></div>
+        <p>Оказалось, гласные в турецком дружат. В <span class="de" lang="tr">kitap</span> живёт «а», значит и окончание с «а».</p>
+        <p>А после числа <span lang="tr">-lar</span> вообще не нужен. <span class="de" lang="tr">İki kitap</span>.</p>
+        <p class="k">Я купил одну. Так проще.</p>
+      </article>
+    </div>
+    <div class="pager" id="feedDots"><i class="on"></i><i></i><i></i></div>
+
+    <div class="sh" style="margin-top:56px"><span class="kick"><span class="n">↓</span> Маршрут</span><span class="meta-t">8 шагов · практика</span></div>
+    <div class="list two" id="routeList">
+      <a class="row" href="#map"><span class="num">01</span><span class="dotc" style="background:var(--navy)"></span><span class="t"><b>Карта звуков</b><small>8 гласных, 13 звонких, 8 глухих</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+      <a class="row" href="#vowels"><span class="num">02</span><span class="dotc" style="background:var(--lime2)"></span><span class="t"><b>Конструктор гласных</b><small>Три вопроса, и любая гласная собрана</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+      <a class="row" href="#big"><span class="num">03</span><span class="dotc" style="background:var(--peri)"></span><span class="t"><b>Большая гармония</b><small>-lar или -ler · две двери</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+      <a class="row" href="#small"><span class="num">04</span><span class="dotc" style="background:var(--violet)"></span><span class="t"><b>Малая гармония</b><small>ı, i, u, ü · четыре двери</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+      <a class="row" href="#pairs"><span class="num">05</span><span class="dotc" style="background:var(--sky)"></span><span class="t"><b>Звонкие и глухие</b><small>cam и çam, gel и kel · пары</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+      <a class="row" href="#fistik"><span class="num">06</span><span class="dotc" style="background:var(--orange)"></span><span class="t"><b>Fıstıkçı Şahap</b><small>-da или -ta · схема</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+      <a class="row" href="#soft"><span class="num">07</span><span class="dotc" style="background:var(--gold)"></span><span class="t"><b>Смягчение</b><small>kitap → kitabı</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+      <a class="row" href="#buffer"><span class="num">08</span><span class="dotc" style="background:var(--olive)"></span><span class="t"><b>Буферы y, s, n</b><small>Гласные не толкаются</small></span><svg class="ic go"><use href="#i-arrow-up-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 01 MAP -->
+<section id="map" data-rail="Карта">
+  <div class="wrap split">
+    <div>
+      <div class="sh"><span class="kick"><span class="n">01</span> Карта звуков</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>1 мин</span></div>
+      <h2 class="h2 split-h">29 букв. <span class="peri">Три команды.</span></h2>
+      <p class="lead"><b>Гласные, звонкие, глухие.</b> Каждая команда играет по своим правилам. Сначала запомни составы.</p>
+    </div>
+    <div class="card rv" id="mapCard">
+      <div class="card-h"><div><h3>Состав алфавита</h3><p>Нажми на команду</p></div><span class="meta-t"><svg class="ic"><use href="#i-users"/></svg></span></div>
+      <div class="sdon">
+        <svg viewBox="0 0 42 42" id="sdon"><circle cx="21" cy="21" r="15.915" fill="none" stroke="#F1F1EF" stroke-width="7"/></svg>
+        <div class="lg" id="sdonLg"></div>
+      </div>
+      <div class="letters" id="letters" lang="tr"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 VOWEL BUILDER -->
+<section id="vowels" data-rail="Гласные">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">02</span> Конструктор гласных</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>3 мин</span></div>
+    <h2 class="h2 split-h">Три вопроса. <span class="peri">Восемь гласных.</span></h2>
+    <p class="lead"><b>Каждая гласная отвечает на три вопроса.</b> Где язык? Какие губы? Как широко рот? Ответил, и гласная собралась сама.</p>
+    <div class="card vb rv" id="vb">
+      <div class="vbq">
+        <div class="row2"><b><svg class="ic"><use href="#i-type"/></svg>Язык</b><span class="seg" data-k="f"><button data-v="0" aria-pressed="true">назад</button><button data-v="1" aria-pressed="false">вперёд</button></span></div>
+        <div class="row2"><b><svg class="ic"><use href="#i-smile"/></svg>Губы</b><span class="seg" data-k="r"><button data-v="0" aria-pressed="true">плоские</button><button data-v="1" aria-pressed="false">круглые</button></span></div>
+        <div class="row2"><b><svg class="ic"><use href="#i-mic"/></svg>Рот</b><span class="seg" data-k="n"><button data-v="0" aria-pressed="true">широко</button><button data-v="1" aria-pressed="false">узко</button></span></div>
+      </div>
+      <div class="vres"><span class="bigv" id="vBig" lang="tr">a</span><div class="t"><b id="vName">a · «а»</b><small id="vEx">araba «араба» · машина</small></div><button class="say" id="vSay" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
+      <div class="cube" id="cube">
+        <div class="cside"><h5>Задние · kalın</h5><div class="cgrid" lang="tr"><span></span><span class="h">плоские</span><span class="h">круглые</span><span class="rh">широко</span><button data-v="000">a</button><button data-v="010">o</button><span class="rh">узко</span><button data-v="001">ı</button><button data-v="011">u</button></div></div>
+        <div class="cside"><h5>Передние · ince</h5><div class="cgrid" lang="tr"><span></span><span class="h">плоские</span><span class="h">круглые</span><span class="rh">широко</span><button data-v="100">e</button><button data-v="110">ö</button><span class="rh">узко</span><button data-v="101">i</button><button data-v="111">ü</button></div></div>
+      </div>
+    </div>
+    <div class="tip2 rv"><span class="ti"><svg class="ic"><use href="#i-lightbulb"/></svg></span><p><b>Турецкие гласные не ленятся.</b> Безударная «о» остаётся «о». <span lang="tr">otobüs</span> это «отобюс», а не «атабус». Каждая гласная звучит в полный голос.</p></div>
+  </div>
+</section>
+
+<!-- 03 BIG HARMONY -->
+<section id="big" data-rail="Большая">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">03</span> Большая гармония</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>2 мин</span></div>
+    <h2 class="h2 split-h">Две двери. <span class="peri">-lar и -ler.</span></h2>
+    <p class="lead"><b>Смотри на последнюю гласную слова.</b> Задняя (a, ı, o, u), значит окончание с «a». Передняя (e, i, ö, ü), значит с «e». Всё.</p>
+    <div class="card hc rv" id="hc">
+      <div class="card-h"><div><h3>Сканер гласных</h3><p>Ищет последнюю гласную справа</p></div><button class="say" id="hSay" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
+      <div class="hstage"><div class="hword" id="hWord" lang="tr"><span class="scan" id="scan"></span></div></div>
+      <div class="doors" id="hDoors">
+        <div class="door"><b lang="tr">-lar</b><small>после a, ı, o, u</small></div>
+        <div class="door"><b lang="tr">-ler</b><small>после e, i, ö, ü</small></div>
+      </div>
+      <div class="hres"><div><b id="hR"></b><small id="hT"></small></div><button class="navb" id="hNext" aria-label="Следующее слово"><svg class="ic"><use href="#i-chevron-right"/></svg></button></div>
+    </div>
+    <div class="punch rv"><p>Это работает не только с <b lang="tr">-lar</b>.</p><p><b lang="tr">-da/-de</b>, <b lang="tr">-dan/-den</b>, <b lang="tr">-ma/-me</b>, <b lang="tr">-sa/-se</b>. Все двухвариантные окончания.</p><p class="lm">Выучил одну дверь, открыл двадцать.</p></div>
+  </div>
+</section>
+
+<!-- 04 SMALL HARMONY -->
+<section id="small" data-rail="Малая">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">04</span> Малая гармония</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>3 мин</span></div>
+    <h2 class="h2 split-h">Четыре двери. <span class="peri">ı, i, u, ü.</span></h2>
+    <p class="lead"><b>Некоторые окончания капризнее.</b> Им мало «задняя или передняя». Им важны ещё и губы. Поэтому дверей четыре.</p>
+    <div class="card hc rv" id="sc">
+      <div class="card-h"><div><h3>Вопрос mı / mi / mu / mü</h3><p>Частица «ли?» подстраивается под слово</p></div><button class="say" id="sSay" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
+      <div class="hstage"><div class="hword" id="sWord" lang="tr"><span class="scan" id="scan2"></span></div></div>
+      <div class="doors four" id="sDoors">
+        <div class="door"><b lang="tr">ı</b><small>a, ı</small></div>
+        <div class="door"><b lang="tr">i</b><small>e, i</small></div>
+        <div class="door"><b lang="tr">u</b><small>o, u</small></div>
+        <div class="door"><b lang="tr">ü</b><small>ö, ü</small></div>
+      </div>
+      <div class="hres"><div><b id="sR"></b><small id="sT"></small></div><button class="navb" id="sNext" aria-label="Следующее слово"><svg class="ic"><use href="#i-chevron-right"/></svg></button></div>
+    </div>
+    <div class="tip2 rv"><span class="ti"><svg class="ic"><use href="#i-hand"/></svg></span><p><b>Запоминалка на пальцах.</b> Губы плоские, и в окончании плоские: ı или i. Губы круглые, и в окончании круглые: u или ü. Язык сзади, и окончание сзади. Окончание просто повторяет за словом. Как попугай.</p></div>
+  </div>
+</section>
+
+<!-- 05 PAIRS -->
+<section id="pairs" data-rail="Пары">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">05</span> Звонкие и глухие</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>2 мин</span></div>
+    <h2 class="h2 split-h">Голос включён. <span class="peri">Голос выключен.</span></h2>
+    <p class="lead"><b>Согласные ходят парами.</b> Рот делает одно и то же. Разница только в голосе. И из-за неё стекло превращается в сосну.</p>
+    <div class="thr rv"><span class="ti"><svg class="ic"><use href="#i-hand"/></svg></span><p><b>Тест рукой.</b> Положи ладонь на горло. Скажи «ззз», потом «ссс». Дрожит на «з»? Это звонкая. Не дрожит? Глухая.</p></div>
+    <div class="pairs2" id="pairs2"></div>
+  </div>
+</section>
+
+<!-- 06 FISTIKCI SAHAP -->
+<section id="fistik" data-rail="Şahap">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">06</span> Fıstıkçı Şahap</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>3 мин</span></div>
+    <h2 class="h2 split-h">Продавец фисташек <span class="peri">Шахап.</span></h2>
+    <p class="lead"><b>Восемь глухих согласных турки прячут в одной фразе.</b> Fıstıkçı Şahap. Согласные из неё и есть все глухие. Запомнил Шахапа, запомнил правило.</p>
+    <div class="fs rv" id="fsBox">
+      <p class="meta-t" style="color:#AEB6DF;justify-content:center;display:flex;margin:0">«фыстыкчы шахап» · Шахап-фисташечник</p>
+      <div class="fsw" id="fsw" lang="tr"></div>
+      <div class="keys" lang="tr"><span>f</span><span>s</span><span>t</span><span>k</span><span>ç</span><span>ş</span><span>h</span><span>p</span></div>
+      <p><b>Слово кончается на одну из них?</b> Тогда окончания на d и c глохнут: d становится t, c становится ç.</p>
+    </div>
+    <div class="split" style="margin-top:12px;align-items:start">
+      <div class="card flowc rv" id="flow" style="margin-top:0">
+        <div class="chword"><div><div class="w" id="fW" lang="tr">kitap</div><div class="r" id="fR">&nbsp;</div></div><button class="say" id="fSay" aria-label="Послушать" style="background:rgba(255,255,255,.12);color:#fff"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
+        <div class="fsteps" id="fsteps">
+          <div class="spine"></div><div class="runner" id="runner"></div>
+          <div class="fstep"><div class="fq">Последняя буква из Fıstıkçı Şahap?<small>f s t k ç ş h p</small></div><div class="fyes"><span>да</span><i></i></div><div class="fres">-ta</div></div>
+          <div class="fstep"><div class="fq">Всё остальное<small>гласная или звонкая</small></div><div class="fyes"><span>да</span><i></i></div><div class="fres">-da</div></div>
+        </div>
+        <p class="why" id="fWhy"><svg class="ic"><use href="#i-lightbulb"/></svg><span>Клеим окончание «в / на». Смотрим на последнюю букву.</span></p>
+      </div>
+      <div class="card rl rv"><h4><i class="dotc" style="background:var(--orange)"></i>Где ещё работает Шахап</h4><ul>
+        <li><code lang="tr">-da / -ta</code><span><b>в, на.</b> evde, kitapta</span></li>
+        <li><code lang="tr">-dan / -tan</code><span><b>из, от.</b> evden, sokaktan</span></li>
+        <li><code lang="tr">-dı / -tı</code><span><b>прошедшее.</b> geldi, gitti</span></li>
+        <li><code lang="tr">-cı / -çı</code><span><b>профессия.</b> yolcu, sütçü</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SOFTENING -->
+<section id="soft" data-rail="Смягчение">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <div class="sh"><span class="kick"><span class="n">07</span> Смягчение</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>2 мин</span></div>
+      <h2 class="h2 split-h">Пришла гласная. <span class="peri">Согласная смягчилась.</span></h2>
+      <p class="lead"><b>Обратный фокус.</b> Слово кончается на p, ç, t, k. Приклеил окончание с гласной, и глухая стала звонкой. Между двумя гласными турки не любят глухих.</p>
+      <div class="chips"><span class="chip">p → b</span><span class="chip">ç → c</span><span class="chip">t → d</span><span class="chip">k → ğ</span><span class="chip p">nk → ng</span><span class="chip l">односложные: обычно нет</span></div>
+    </div>
+    <div class="softl" id="softl"></div>
+  </div>
+</section>
+
+<!-- 08 BUFFER -->
+<section id="buffer" data-rail="Буферы">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">08</span> Буферы</span><span class="meta-t"><svg class="ic"><use href="#i-timer"/></svg>2 мин</span></div>
+    <h2 class="h2 split-h">Гласные <span class="peri">не толкаются.</span></h2>
+    <p class="lead"><b>Две гласные рядом турецкий не любит.</b> Слово кончается на гласную, окончание начинается с гласной? Между ними встаёт буква-охранник: y, s или n.</p>
+    <div class="card buf rv" id="buf">
+      <div class="sh"><div class="tabs" id="bTabs" role="tablist"></div><button class="say" id="bSay" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
+      <div class="bstage" lang="tr"><span class="boom" id="boom">БУМ</span><div class="bw" id="bW"></div></div>
+      <p class="utxt" id="bTxt"></p>
+    </div>
+    <h3 class="h2" style="font-size:clamp(26px,7vw,44px);margin-top:40px">Турецкий не любит <span class="peri">толпу.</span></h3>
+    <p class="lead" style="max-width:42ch"><b>Две согласные в начале слова тоже напрягают.</b> Турки вставляют гласную. Без спроса.</p>
+    <div class="crowd" id="crowd"></div>
+  </div>
+</section>
+
+<!-- LAB -->
+<section id="reader" data-rail="Лаборатория" style="padding-bottom:0">
+  <div class="limep">
+    <div class="ldots" id="ldots" aria-hidden="true"></div>
+    <div class="wrap grid">
+      <div style="position:relative;z-index:1">
+        <h2 lang="tr">Ek Lab</h2>
+        <p class="sub">Лаборатория окончаний. Все законы в одном телефоне</p>
+        <a class="btn" href="#phone">Собери слово ↓</a>
+        <p class="big2">Выбери слово. Выбери окончание. Посмотри, кто что поменял.</p>
+        <p class="faint">Гармония, Шахап, смягчение и буферы работают вместе</p>
+      </div>
+      <div class="phone" id="phone">
+        <div class="ph-status"><span>9:41</span><span class="isl"></span><span class="ico"><i></i></span></div>
+        <div class="ph-h"><span class="av"><svg class="sunlogo"><use href="#sun"/></svg></span><b lang="tr">Ek Lab</b><span class="bell"><svg class="ic"><use href="#i-puzzle"/></svg></span></div>
+        <div class="tabs ph-chips" id="labW" role="tablist" lang="tr"></div>
+        <div class="tabs" id="labS" role="tablist"></div>
+        <div class="lab-word">
+          <div class="res" id="labRes" lang="tr"></div>
+          <div class="tr3"><b id="labTr"></b><button class="say" id="labSay" aria-label="Послушать"><svg class="ic"><use href="#i-volume-2"/></svg></button></div>
+          <div class="mean" id="labMean"></div>
+        </div>
+        <div class="lsteps" id="labSteps"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" data-rail="Видео">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">▶</span> Видео</span><span class="meta-t"><svg class="ic"><use href="#i-headphones"/></svg>YouTube</span></div>
+    <h2 class="h2 split-h">Схемы в голове. <span class="peri">Звуки в ушах.</span></h2>
+    <p class="lead"><b>Гармонию надо слышать.</b> Через неделю ухо само режет «kitapler». Как вилкой по тарелке.</p>
+    <div class="vid rv">
+      <div class="tabs" id="vTabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-v="0">Гармония гласных · 9 мин</button>
+        <button class="tab" role="tab" aria-selected="false" data-v="1">Fıstıkçı Şahap · 4 мин</button>
+        <button class="tab" role="tab" aria-selected="false" data-v="2">Озвончение · 11 мин</button>
+      </div>
+      <div class="vbox" id="vbox">
+        <img id="vImg" alt="" loading="lazy" src="https://i.ytimg.com/vi/a-WJM0H6Fec/hqdefault.jpg">
+        <button class="vplay" id="vPlay" aria-label="Смотреть видео"><svg class="ic"><use href="#i-play"/></svg></button>
+        <div class="vcap"><b id="vT">Правило гармонии. Гармония гласных</b><small id="vC">Канал «Pratikturkce» · 108 тыс. просмотров</small></div>
+      </div>
+      <div class="vtips">
+        <div class="vt"><span class="n">1</span><p><b>Повторяй пары вслух.</b> ev-ler, okul-lar. Пока язык не начнёт сам.</p></div>
+        <div class="vt"><span class="n">2</span><p><b>Рука на горле.</b> Звонкие и глухие проверяются рукой лучше, чем ухом.</p></div>
+        <div class="vt"><span class="n">3</span><p><b>Шахапа повесь на холодильник.</b> Восемь букв. Каждый день мимо.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section id="practice" data-rail="Практика">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">✓</span> Практика</span><span class="meta-t"><svg class="ic"><use href="#i-trophy"/></svg>3 упражнения</span></div>
+    <h2 class="h2 split-h">Твоя <span class="peri">очередь.</span></h2>
+    <p class="lead"><b>Три упражнения от нас.</b> С ответами и объяснениями. Кричать на продавца не придётся.</p>
+    <div class="card ex rv">
+      <div class="exh"><span class="n">1</span><div><h3>-lar или -ler?</h3><p>Большая гармония. 6 слов.</p></div></div>
+      <div id="qz1" aria-live="polite"></div>
+    </div>
+    <div class="card ex rv">
+      <div class="exh"><span class="n">2</span><div><h3>Где? -da, -de, -ta, -te</h3><p>Гармония плюс Шахап. Выбери окончание.</p></div></div>
+      <div class="lens" id="lens"></div>
+      <div class="ex-foot"><button class="btn sm" id="lenCheck"><svg class="ic"><use href="#i-check"/></svg>Проверить</button><button class="btn ghost sm" id="lenReset"><svg class="ic"><use href="#i-rotate-ccw"/></svg>Сброс</button><span class="score" id="lenScore"></span></div>
+    </div>
+    <div class="card ex rv">
+      <div class="exh"><span class="n">3</span><div><h3>Кого? Что? Винительный</h3><p>Смягчение, буфер и четыре двери. 6 слов.</p></div></div>
+      <div id="qz2" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHEAT -->
+<section id="cheat" data-rail="Шпаргалка">
+  <div class="wrap">
+    <div class="sh"><span class="kick"><span class="n">≡</span> Шпаргалка</span><span class="meta-t">сохрани скрином</span></div>
+    <h2 class="h2 split-h">Все законы на одном <span class="peri">экране.</span></h2>
+    <div class="cheat">
+      <div class="card rv">
+        <div class="ch-h"><span class="lg"><svg class="sunlogo"><use href="#sun"/></svg></span><b lang="tr">Ses kuralları</b></div>
+        <div id="cheatRows"></div>
+      </div>
+      <div class="card rv">
+        <div class="kv">
+          <div><small>Гласных</small><span>8: a e ı i o ö u ü</span></div>
+          <div><small>Задние / передние</small><span>a ı o u / e i ö ü</span></div>
+          <div><small>Глухих</small><span>8: Fıstıkçı Şahap</span></div>
+          <div><small>Дверей у гармонии</small><span>2 или 4</span></div>
+          <div><small>Буферов</small><span>3: y, s, n</span></div>
+          <div><small>Купленных книг</small><span>1</span></div>
+        </div>
+        <p class="quote" style="font-size:20px">Окончание повторяет за словом. <span>Твоя задача просто не мешать.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="fin" id="final" data-rail="Финал" style="padding-bottom:0">
+  <div class="eye" id="eye">
+    <span class="cl" style="width:46%;height:18%;left:40%;top:18%"></span>
+    <span class="cl" style="width:30%;height:12%;left:16%;top:40%;opacity:.35"></span>
+    <span class="cl" style="width:36%;height:14%;left:52%;top:58%;opacity:.3"></span>
+    <div class="grass" id="grass"></div>
+    <div class="ring-dots" id="ringDots"></div>
+    <div class="in">
+      <h2 lang="tr">Dinle. Söyle.</h2>
+      <div class="logo"><svg class="sunlogo"><use href="#sun"/></svg><span lang="tr">sesler</span></div>
+    </div>
+  </div>
+  <div class="after">
+    <article class="card post rv">
+      <div class="post-h"><span class="av"><svg class="sunlogo"><use href="#sun"/></svg></span><div><b>Тимур</b><small>тот же книжный, месяц спустя</small></div></div>
+      <p>Через месяц я снова зашёл в тот книжный.</p>
+      <p>Говорю, <span class="de" lang="tr">iki kitap, lütfen</span>. Без <span lang="tr">-lar</span>.</p>
+      <p>Продавец смотрит на меня. Узнаёт. Молча кивает.</p>
+      <p class="k">Мы оба помним. Но никто не кричит.</p>
+    </article>
+    <div class="halo"><div><b>Проверь себя<br>ещё раз</b><small>3 упражнения · 5 минут</small><a class="btn" href="#practice">К практике</a></div></div>
+  </div>
+  <footer><a class="brand" href="#start"><svg class="sunlogo"><use href="#sun"/></svg><b lang="tr">sesler</b></a>Для тех, кто кричал kitapler. Мы вас понимаем.</footer>
+</section>
+</main>
+
+<script>
+function xInit(){
+  var G = (window.gsap && window.ScrollTrigger) ? window.gsap : null;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) G = null;
+  if (G) { gsap.registerPlugin(ScrollTrigger); if (window.SplitText) gsap.registerPlugin(SplitText); document.documentElement.classList.add('gs'); ScrollTrigger.config({ignoreMobileResize:true}); }
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var ICON = function(n){ return '<svg class="ic"><use href="#i-' + n + '"/></svg>'; };
+  var SAYBTN = function(t){ return '<button class="say" data-say="' + t + '" aria-label="Послушать">' + ICON('volume-2') + '</button>'; };
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function wait(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+  function whenVisible(el, on, off){ if (!el) return; if (!('IntersectionObserver' in window)) { on(); return; } new IntersectionObserver(function(es){ es.forEach(function(x){ x.isIntersecting ? on() : (off && off()); }); }, {threshold:.25}).observe(el); }
+  function once(el, fn, th){ if (!el) return; if (!('IntersectionObserver' in window)) { fn(); return; } var io = new IntersectionObserver(function(es){ es.forEach(function(x){ if (x.isIntersecting) { io.disconnect(); fn(); } }); }, {threshold: th || .3}); io.observe(el); }
+  function segBind(root, cb){ $$('.seg', root).forEach(function(sg){ $$('button', sg).forEach(function(b){ b.addEventListener('click', function(){ $$('button', sg).forEach(function(x){ x.setAttribute('aria-pressed', x === b); }); if (cb) cb(sg, b); }); }); }); }
+
+  /* ---------- turkish phonetics helpers ---------- */
+  var VOW = 'aeıioöuü', BACK = 'aıou', VL = 'fstkçşhp';
+  var I4 = {a:'ı', ı:'ı', e:'i', i:'i', o:'u', u:'u', ö:'ü', ü:'ü'};
+  function lastV(w){ for (var k = w.length - 1; k >= 0; k--) if (VOW.indexOf(w[k]) > -1) return w[k]; return 'e'; }
+  function A2(w){ return BACK.indexOf(lastV(w)) > -1 ? 'a' : 'e'; }
+  var RU = {a:'а',b:'б',c:'дж','ç':'ч',d:'д',e:'э',f:'ф',g:'г',h:'х','ı':'ы',i:'и',j:'ж',k:'к',l:'л',m:'м',n:'н',o:'о','ö':'ё',p:'п',r:'р',s:'с','ş':'ш',t:'т',u:'у','ü':'ю',v:'в',y:'й',z:'з',' ':' '};
+  function ru(w){
+    w = w.toLocaleLowerCase('tr'); var out = '';
+    for (var k = 0; k < w.length; k++) {
+      var c = w[k], nx = w[k+1] || '', pv = w[k-1] || '';
+      if (c === 'ğ') { if ('eiöü'.indexOf(pv) > -1) out += 'й'; else if (VOW.indexOf(nx) < 0) out += ':'; continue; }
+      out += RU[c] !== undefined ? RU[c] : c;
+    }
+    return '«' + out + '»';
+  }
+
+  /* ---------- speech + voice picker ---------- */
+  var synth = window.speechSynthesis, trVoice = null, allTr = [], VC = {voice:'', rate:.85};
+  try { var sv = JSON.parse(localStorage.getItem('sesler-voice') || 'null'); if (sv) VC = sv; } catch (e) {}
+  function saveVC(){ try { localStorage.setItem('sesler-voice', JSON.stringify(VC)); } catch (e) {} }
+  function pickVoice(){ if (!synth) return; allTr = synth.getVoices().filter(function(x){ return /^tr(-|_|$)/i.test(x.lang); }); trVoice = allTr.filter(function(x){ return x.name === VC.voice; })[0] || allTr[0] || null; renderVoices(); }
+  function say(text, btn){ if (!synth || !text) return; synth.cancel(); var u = new SpeechSynthesisUtterance(text); u.lang = 'tr-TR'; u.rate = VC.rate; if (trVoice) u.voice = trVoice; if (btn) { btn.classList.add('on'); u.onend = u.onerror = function(){ btn.classList.remove('on'); }; } synth.speak(u); }
+  document.addEventListener('click', function(e){ var b = e.target.closest('[data-say]'); if (b) say(b.getAttribute('data-say'), b); });
+  var vpanel = $('#vpanel'), vScrim = $('#vScrim'), vOpen = $('#vOpen');
+  function vToggle(on){ vpanel.classList.toggle('on', on); vScrim.classList.toggle('on', on); vpanel.setAttribute('aria-hidden', !on); if (on) { pickVoice(); setTimeout(function(){ $('#vClose').focus(); }, 50); } else vOpen.focus(); }
+  vOpen.addEventListener('click', function(){ vToggle(true); });
+  $('#vClose').addEventListener('click', function(){ vToggle(false); }); $('#vDone').addEventListener('click', function(){ vToggle(false); }); vScrim.addEventListener('click', function(){ vToggle(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && vpanel.classList.contains('on')) vToggle(false); });
+  function renderVoices(){
+    $$('#vRate button').forEach(function(b){ b.setAttribute('aria-pressed', +b.getAttribute('data-r') === VC.rate); });
+    $('#vCount').textContent = allTr.length ? allTr.length + ' на устройстве' : '';
+    $('#vList').innerHTML = allTr.length ? allTr.map(function(v){ return '<button class="vopt" data-name="' + esc(v.name) + '" aria-pressed="' + (trVoice && v.name === trVoice.name) + '"><i class="dotc"></i><span>' + esc(v.name) + '</span><small>' + esc(v.lang) + '</small></button>'; }).join('') : '<div class="vopt" style="cursor:default"><span>Турецких голосов не нашлось</span></div>';
+    $$('#vList .vopt[data-name]').forEach(function(b){ b.addEventListener('click', function(){ VC.voice = b.getAttribute('data-name'); saveVC(); pickVoice(); say('Kitaplar, evler.'); }); });
+    $('#vNote').innerHTML = !synth ? '<b>Браузер не умеет говорить.</b> Попробуй Chrome или Safari.' : !allTr.length ? '<b>Нет турецкого голоса.</b> Добавь его в настройках телефона: Язык и регион → Озвучивание → Türkçe.' : 'Все голоса читают стамбульский турецкий. Выбери тот, что приятнее слушать.';
+  }
+  $$('#vRate button').forEach(function(b){ b.addEventListener('click', function(){ VC.rate = +b.getAttribute('data-r'); saveVC(); renderVoices(); say('Kitaplar, evler.'); }); });
+  if (!synth) document.documentElement.classList.add('no-tts'); else { pickVoice(); synth.onvoiceschanged = pickVoice; }
+  renderVoices();
+
+  /* ---------- reveals ---------- */
+  if (G) {
+    ScrollTrigger.batch('.rv', {start:'top 88%', once:true, onEnter:function(b){ gsap.from(b, {y:46, rotation:.6, duration:1, ease:'power3.out', stagger:.08}); }});
+    var splitAll = function(){ $$('.split-h').forEach(function(h){ if (!window.SplitText) return; var st = new SplitText(h, {type:'words', wordsClass:'wd'}); gsap.from(st.words, {yPercent:70, rotation:4, duration:.9, ease:'back.out(1.8)', stagger:.06, scrollTrigger:{trigger:h, start:'top 88%', once:true}}); }); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(splitAll); else splitAll();
+    $$('.lead').forEach(function(p){ gsap.from(p, {y:24, duration:.9, ease:'power3.out', scrollTrigger:{trigger:p, start:'top 90%', once:true}}); });
+  } else { $$('.rv').forEach(function(el){ once(el, function(){ el.classList.add('in'); }, .1); }); }
+
+  /* ---------- hero ---------- */
+  var pol = $('#pollen');
+  for (var i = 0; i < 14; i++) { var d = document.createElement('i'); d.style.left = (8 + Math.random()*84) + '%'; d.style.top = (40 + Math.random()*50) + '%'; d.style.animationDelay = (-Math.random()*9) + 's'; d.style.width = d.style.height = (2 + Math.random()*4) + 'px'; pol.appendChild(d); }
+  if (G) {
+    var hs = {trigger:'.hero-card', start:'top top', end:'bottom top', scrub:true};
+    gsap.to('#pSun', {y:-60, scrollTrigger:hs}); gsap.to('#pFar', {y:-20, scrollTrigger:hs}); gsap.to('#pMid', {y:-40, scrollTrigger:hs}); gsap.to('#pNear', {y:-70, scrollTrigger:hs});
+    gsap.to('.hero-top > *', {y:90, scrollTrigger:hs});
+    $$('.steam').forEach(function(s, k){ gsap.to(s, {y:-30, scaleX:1.6, opacity:0, duration:3 + k, repeat:-1, ease:'sine.out', delay:k*.8}); });
+    gsap.from('.stat', {scale:.4, rotation:-20, duration:.9, ease:'back.out(2.4)', stagger:.1, delay:.6});
+  }
+
+  /* ---------- progress + rail ---------- */
+  var prog = $('#prog'), rail = $('#rail'), thumb = $('#railThumb'), fill = $('#railFill'), tip = $('#railTip'), ticksBox = $('#railTicks'), railSun = $('#railSun');
+  var secs = $$('[data-rail]'), ticks = [], marks = [], hideT, dragging = false, lastIdx = -1;
+  function maxScroll(){ return Math.max(1, document.documentElement.scrollHeight - innerHeight); }
+  function layoutTicks(){ ticksBox.innerHTML = ''; ticks = []; marks = []; var m = maxScroll();
+    secs.forEach(function(s){ var p = Math.min(1, Math.max(0, (s.getBoundingClientRect().top + scrollY - 60) / m)); marks.push(p); var t = document.createElement('button'); t.className = 'rail-tick'; t.style.top = (p*100) + '%'; t.tabIndex = -1; t.addEventListener('click', function(e){ e.stopPropagation(); s.scrollIntoView({behavior:'smooth'}); }); ticksBox.appendChild(t); ticks.push(t); });
+    lastIdx = -1; }
+  function railUpdate(){ var p = Math.min(1, Math.max(0, scrollY / maxScroll())), h = rail.clientHeight;
+    thumb.style.transform = 'translateY(' + (p*h) + 'px)'; tip.style.transform = 'translateY(' + (p*h) + 'px)'; fill.style.transform = 'scaleY(' + p + ')'; prog.style.transform = 'scaleX(' + p + ')'; railSun.style.transform = 'rotate(' + (scrollY*.25) + 'deg)';
+    var k = 0; for (var j = 0; j < marks.length; j++) if (p >= marks[j] - .002) k = j;
+    if (k !== lastIdx) { lastIdx = k; ticks.forEach(function(t, j){ t.classList.toggle('on', j <= k); }); tip.innerHTML = '<b>' + String(k+1).padStart(2,'0') + '</b><span>' + secs[k].getAttribute('data-rail') + '</span>'; } }
+  function showRail(){ rail.classList.add('show'); rail.classList.remove('idle'); clearTimeout(hideT); if (!dragging) hideT = setTimeout(function(){ rail.classList.remove('show'); rail.classList.add('idle'); }, 1100); }
+  addEventListener('scroll', function(){ railUpdate(); showRail(); }, {passive:true});
+  addEventListener('resize', function(){ layoutTicks(); railUpdate(); });
+  function dragTo(y){ var r = rail.getBoundingClientRect(); var p = Math.min(1, Math.max(0, (y - r.top) / r.height)); document.documentElement.style.scrollBehavior = 'auto'; scrollTo(0, p * maxScroll()); document.documentElement.style.scrollBehavior = ''; }
+  rail.addEventListener('pointerdown', function(e){ if (e.target.closest('.rail-tick')) return; dragging = true; rail.classList.add('drag'); rail.setPointerCapture(e.pointerId); dragTo(e.clientY); showRail(); e.preventDefault(); });
+  rail.addEventListener('pointermove', function(e){ if (dragging) dragTo(e.clientY); });
+  function endDrag(){ if (!dragging) return; dragging = false; rail.classList.remove('drag'); showRail(); }
+  rail.addEventListener('pointerup', endDrag); rail.addEventListener('pointercancel', endDrag);
+  layoutTicks(); railUpdate();
+  function relayout(){ layoutTicks(); railUpdate(); if (G) ScrollTrigger.refresh(); }
+  addEventListener('load', relayout); if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+
+  /* ---------- story ---------- */
+  var feed = $('#feed'), fd = $$('#feedDots i');
+  feed.addEventListener('scroll', function(){ var w = feed.firstElementChild.getBoundingClientRect().width + 12; var k = Math.round(feed.scrollLeft / w); fd.forEach(function(x, j){ x.classList.toggle('on', j === k); }); }, {passive:true});
+  if (G) gsap.from('#routeList .row', {x:-30, duration:.6, ease:'power3.out', stagger:.05, scrollTrigger:{trigger:'#routeList', start:'top 85%', once:true}});
+
+  /* ---------- 01 map donut ---------- */
+  var TEAMS = [
+    ['v','Гласные','a e ı i o ö u ü','#C3EB2F','aeıioöuü'],
+    ['z','Звонкие согласные','голос дрожит','#5B6BDC','bcdgğjlmnrvyz'],
+    ['s','Глухие согласные','только воздух','#E8572A','fstkçşhp']
+  ];
+  var ALPHA = 'abcçdefgğhıijklmnoöprsştuüvyz';
+  var sdon = $('#sdon'), off = 25;
+  TEAMS.forEach(function(t){
+    var len = t[4].length / 29 * 100, l2 = len - 1.2, c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',21); c.setAttribute('cy',21); c.setAttribute('r',15.915); c.setAttribute('fill','none'); c.setAttribute('stroke', t[3]); c.setAttribute('stroke-width', 7);
+    c.setAttribute('stroke-dasharray', l2 + ' ' + (100 - l2)); c.setAttribute('stroke-dashoffset', 100 - (off - 25) ); off += len; c.setAttribute('data-t', t[0]); sdon.appendChild(c);
+  });
+  $('#sdonLg').innerHTML = TEAMS.map(function(t){ return '<div data-t="' + t[0] + '" role="button" tabindex="0" style="cursor:pointer"><i class="dotc" style="background:' + t[3] + '"></i><span>' + t[1] + '<small>' + t[2] + '</small></span><b>' + t[4].length + '</b></div>'; }).join('');
+  var letters = $('#letters');
+  letters.innerHTML = ALPHA.split('').map(function(c){ return '<span data-c="' + c + '">' + c + '</span>'; }).join('');
+  function team(t){
+    var T = TEAMS.filter(function(x){ return x[0] === t; })[0];
+    $$('span', letters).forEach(function(s){ var on = T[4].indexOf(s.getAttribute('data-c')) > -1; s.className = on ? t : ''; });
+    $$('#sdonLg div').forEach(function(d){ d.style.background = d.getAttribute('data-t') === t ? 'var(--lav)' : ''; });
+    $$('#sdon circle[data-t]').forEach(function(c){ c.setAttribute('stroke-width', c.getAttribute('data-t') === t ? 9 : 6); });
+    if (G) gsap.fromTo($$('span.' + t, letters), {y:-10}, {y:0, duration:.4, ease:'bounce.out', stagger:.03});
+  }
+  $$('#sdonLg div').forEach(function(d){ d.addEventListener('click', function(){ mapUser = true; team(d.getAttribute('data-t')); }); d.addEventListener('keydown', function(e){ if (e.key === 'Enter') { mapUser = true; team(d.getAttribute('data-t')); } }); });
+  var mapUser = false, mapK = 0, mapT = null;
+  team('v');
+  whenVisible($('#mapCard'), function(){ clearInterval(mapT); mapT = setInterval(function(){ if (mapUser) return; mapK = (mapK + 1) % 3; team(TEAMS[mapK][0]); }, 2600); }, function(){ clearInterval(mapT); });
+  if (G) gsap.from('#sdon circle[data-t]', {attr:{'stroke-dasharray':'0 100'}, duration:1.2, ease:'power3.out', stagger:.2, scrollTrigger:{trigger:'#sdon', start:'top 85%', once:true}});
+
+  /* ---------- 02 vowel builder ---------- */
+  var VB = {'000':['a','а','araba','машина'],'001':['ı','ы','kız','девушка'],'010':['o','о','okul','школа'],'011':['u','у','su','вода'],'100':['e','э','ev','дом'],'101':['i','и','iki','два'],'110':['ö','ё','göz','глаз'],'111':['ü','ю','gül','роза']};
+  var vState = {f:0, r:0, n:0}, vUser = false, vTimer = null, vK = 0;
+  function vKey(){ return '' + vState.f + vState.r + vState.n; }
+  function setV(key, fromUser){
+    vState.f = +key[0]; vState.r = +key[1]; vState.n = +key[2];
+    ['f','r','n'].forEach(function(k){ $$('.seg[data-k="' + k + '"] button', $('#vb')).forEach(function(b){ b.setAttribute('aria-pressed', +b.getAttribute('data-v') === vState[k]); }); });
+    var v = VB[key];
+    $('#vBig').textContent = v[0]; $('#vName').textContent = v[0] + ' · «' + v[1] + '»'; $('#vEx').textContent = v[2] + ' «' + ru(v[2]).slice(1, -1) + '» · ' + v[3];
+    $('#vSay').setAttribute('data-say', v[2]);
+    $$('#cube button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-v') === key); });
+    if (G) gsap.fromTo('#vBig', {scale:.4, rotation:-30}, {scale:1, rotation:0, duration:.7, ease:'elastic.out(1,.5)'});
+    if (fromUser) say(v[2]);
+  }
+  segBind($('#vb'), function(sg, b){ vUser = true; vState[sg.getAttribute('data-k')] = +b.getAttribute('data-v'); setV(vKey(), true); });
+  $$('#cube button').forEach(function(b){ b.addEventListener('click', function(){ vUser = true; setV(b.getAttribute('data-v'), true); }); });
+  setV('000');
+  var VORDER = ['000','001','010','011','100','101','110','111'];
+  whenVisible($('#vb'), function(){ clearInterval(vTimer); vTimer = setInterval(function(){ if (vUser) return; vK = (vK + 1) % 8; setV(VORDER[vK]); }, 1900); }, function(){ clearInterval(vTimer); });
+
+  /* ---------- 03/04 harmony scanners ---------- */
+  function scanner(cfg){
+    var word = $(cfg.word), scan = $(cfg.scan), doors = $$(cfg.doors + ' .door'), k = 0, run = 0, vis = false, timer = null;
+    async function show(idx){
+      var my = ++run; k = (idx + cfg.data.length) % cfg.data.length; var it = cfg.data[k], w = it[0];
+      $$('.hl2', word).forEach(function(n){ n.remove(); }); doors.forEach(function(d){ d.classList.remove('on'); });
+      $(cfg.R).textContent = ''; $(cfg.T).textContent = 'Ищем последнюю гласную…';
+      w.split('').forEach(function(c){ var s = document.createElement('span'); s.className = 'hl2' + (VOW.indexOf(c) > -1 ? ' vw' : ''); s.textContent = c; word.appendChild(s); });
+      var ls = $$('.hl2', word);
+      if (G) gsap.from(ls, {y:-24, opacity:0, duration:.35, ease:'back.out(2)', stagger:.04});
+      scan.style.opacity = 1;
+      var pos = function(n){ return n.offsetLeft + n.offsetWidth/2; };
+      await wait(400);
+      for (var j = ls.length - 1; j >= 0; j--) {
+        if (my !== run) return;
+        if (G) gsap.to(scan, {x:pos(ls[j]), duration:.22, ease:'power1.inOut'}); else scan.style.transform = 'translateX(' + pos(ls[j]) + 'px)';
+        await wait(260);
+        if (VOW.indexOf(ls[j].textContent) > -1) { ls[j].classList.add('last'); break; }
+      }
+      if (my !== run) return;
+      var lv = lastV(w), di = cfg.door(lv); doors[di].classList.add('on');
+      await wait(450); if (my !== run) return;
+      var suf = cfg.suffix(w, lv);
+      if (cfg.space) { var sp = document.createElement('span'); sp.className = 'hl2'; sp.style.cssText = 'background:none;width:10px'; word.appendChild(sp); }
+      suf.split('').forEach(function(c){ var s = document.createElement('span'); s.className = 'hl2 suf'; s.textContent = c; word.appendChild(s); });
+      if (G) gsap.from($$('.suf', word), {y:-40, opacity:0, duration:.5, ease:'bounce.out', stagger:.06});
+      scan.style.opacity = 0;
+      var full = w + (cfg.space ? ' ' : '') + suf;
+      $(cfg.R).textContent = full + '  ' + ru(full); $(cfg.T).textContent = it[1] + ' · последняя гласная «' + lv + '»';
+      $(cfg.say).setAttribute('data-say', full + (cfg.space ? '?' : ''));
+    }
+    $(cfg.next).addEventListener('click', function(){ clearInterval(timer); show(k + 1); });
+    whenVisible($(cfg.box), function(){ if (vis) return; vis = true; show(k); clearInterval(timer); timer = setInterval(function(){ if (vis) show(k + 1); }, 4600); }, function(){ vis = false; clearInterval(timer); run++; });
+    show(0);
+  }
+  scanner({word:'#hWord', scan:'#scan', doors:'#hDoors', R:'#hR', T:'#hT', say:'#hSay', next:'#hNext', box:'#hc',
+    data:[['kitap','книги'],['ev','дома'],['okul','школы'],['göz','глаза'],['kız','девушки'],['gül','розы'],['araba','машины'],['kedi','кошки']],
+    door:function(lv){ return BACK.indexOf(lv) > -1 ? 0 : 1; }, suffix:function(w, lv){ return 'l' + (BACK.indexOf(lv) > -1 ? 'a' : 'e') + 'r'; }});
+  scanner({word:'#sWord', scan:'#scan2', doors:'#sDoors', R:'#sR', T:'#sT', say:'#sSay', next:'#sNext', box:'#sc', space:true,
+    data:[['kitap','книга?'],['ev','дом?'],['okul','школа?'],['göz','глаз?'],['kız','девушка?'],['kedi','кошка?'],['top','мяч?'],['gül','роза?']],
+    door:function(lv){ return 'ıiuü'.indexOf(I4[lv]); }, suffix:function(w, lv){ return 'm' + I4[lv]; }});
+
+  /* ---------- 05 pairs ---------- */
+  var PR = [
+    ['c','cam','стекло','ç','çam','сосна'],
+    ['g','gel','иди сюда','k','kel','лысый'],
+    ['v','var','есть','f','far','фара'],
+    ['z','zor','трудно','s','sor','спроси'],
+    ['d','dut','шелковица','t','tut','держи'],
+    ['b','bal','мёд','p','pul','марка'],
+    ['j','jilet','лезвие','ş','şişe','бутылка']
+  ];
+  var WV = '<svg class="wave" viewBox="0 0 44 18"><path d="M2 9 Q6 1 10 9 T18 9 T26 9 T34 9 T42 9"/></svg>', FL = '<svg class="wave" viewBox="0 0 44 18"><path d="M2 9 H42"/></svg>';
+  $('#pairs2').innerHTML = PR.map(function(p){
+    return '<div class="pr rv"><button class="pc vz" data-say="' + p[1] + '">' + WV + '<span class="L" lang="tr">' + p[0] + '</span><span class="w" lang="tr">' + p[1] + ' <small>' + ru(p[1]) + '</small></span><small>' + p[2] + '</small></button>' +
+      '<span class="vs">vs</span><button class="pc vl" data-say="' + p[4] + '">' + FL + '<span class="L" lang="tr">' + p[3] + '</span><span class="w" lang="tr">' + p[4] + ' <small>' + ru(p[4]) + '</small></span><small>' + p[5] + '</small></button></div>';
+  }).join('');
+  if (G) { gsap.to('#pairs2 .pc.vz .wave path', {x:-8, duration:.5, repeat:-1, ease:'none'}); ScrollTrigger.batch('#pairs2 .pr', {start:'top 90%', once:true, onEnter:function(b){ gsap.from(b, {x:-30, duration:.6, ease:'power3.out', stagger:.06}); }}); }
+
+  /* ---------- 06 fıstıkçı şahap ---------- */
+  var FS = 'fıstıkçı şahap', fsw = $('#fsw');
+  fsw.innerHTML = FS.split('').map(function(c){ return c === ' ' ? '<span class="gap"></span>' : '<span class="' + (VL.indexOf(c) > -1 ? 'c' : '') + '">' + c + '</span>'; }).join('');
+  var fsTimer = null;
+  function fsRun(){ var cs = $$('span.c', fsw); cs.forEach(function(s){ s.classList.remove('on'); }); cs.forEach(function(s, k){ setTimeout(function(){ s.classList.add('on'); }, 300 + k*260); }); }
+  whenVisible($('#fsBox'), function(){ fsRun(); clearInterval(fsTimer); fsTimer = setInterval(fsRun, 5200); say('Fıstıkçı Şahap'); }, function(){ clearInterval(fsTimer); });
+  var FW = ['kitap','ev','sokak','okul','ağaç','göz','süt','araba'];
+  var fsteps = $$('#fsteps .fstep'), runner = $('#runner'), fRun = 0, fVis = false, fK = 0;
+  function placeRunner(j){ var s = fsteps[j]; var y = s.offsetTop + s.offsetHeight/2 - 7; if (G) gsap.to(runner, {y:y, duration:.45, ease:'power2.inOut'}); else runner.style.transform = 'translateY(' + y + 'px)'; }
+  async function fLoop(){
+    var my = ++fRun;
+    while (fVis && my === fRun) {
+      var w = FW[fK % FW.length]; fK++;
+      var last = w[w.length-1], hit = VL.indexOf(last) > -1 ? 0 : 1, a = A2(w), suf = (hit === 0 ? 't' : 'd') + a, full = w + suf;
+      $('#fW').innerHTML = esc(w.slice(0, -1)) + '<mark>' + esc(last) + '</mark>'; $('#fR').innerHTML = '&nbsp;'; $('#fSay').setAttribute('data-say', full);
+      $('#fWhy span').textContent = 'Последняя буква «' + last + '». Проверяем…';
+      fsteps.forEach(function(s){ s.className = 'fstep'; });
+      $$('.fres', $('#fsteps'))[0].textContent = '-t' + a; $$('.fres', $('#fsteps'))[1].textContent = '-d' + a;
+      if (G) gsap.fromTo('#fW', {y:16, opacity:0}, {y:0, opacity:1, duration:.4});
+      await wait(600); if (my !== fRun) return;
+      for (var j = 0; j <= hit; j++) { placeRunner(j); fsteps[j].classList.add('cur'); await wait(700); if (my !== fRun) return; if (j < hit) { fsteps[j].classList.remove('cur'); fsteps[j].classList.add('no'); } }
+      fsteps[hit].classList.add('hit');
+      $('#fW').innerHTML = esc(w) + '<mark>' + suf + '</mark>'; $('#fR').textContent = ru(full) + ' · ' + {kitap:'в книге',ev:'в доме',sokak:'на улице',okul:'в школе','ağaç':'на дереве','göz':'в глазу','süt':'в молоке',araba:'в машине'}[w];
+      $('#fWhy span').textContent = (hit === 0 ? '«' + last + '» есть у Шахапа. d глохнет в t. ' : '«' + last + '» не из Шахапа. Оставляем d. ') + 'А гласная по гармонии: «' + a + '».';
+      await wait(3400);
+    }
+  }
+  whenVisible($('#flow'), function(){ if (!fVis) { fVis = true; fLoop(); } }, function(){ fVis = false; fRun++; });
+
+  /* ---------- 07 softening ---------- */
+  var SOFT = [
+    ['kitap','p','b','ı','книгу'],['ağaç','ç','c','ı','дерево (вин.)'],['kanat','t','d','ı','крыло (вин.)'],['çocuk','k','ğ','u','ребёнка'],['renk','k','g','i','цвет (вин.), nk → ng'],['top','p','p','u','мяч: один слог, не меняем']
+  ];
+  var softl = $('#softl');
+  SOFT.forEach(function(s){
+    var mono = s[1] === s[2], r = document.createElement('div'); r.className = 'sr' + (mono ? ' mono' : '');
+    var stem = s[0].slice(0, -1), full = stem + s[2] + s[3];
+    r.innerHTML = '<span class="tag">' + (mono ? '=' : s[1] + '→' + s[2]) + '</span><div class="t"><div class="w"><span lang="tr">' + esc(stem) + '<span class="fl"><i class="a2">' + s[1] + '</i><i class="b2">' + s[2] + '</i></span><span class="sx">' + s[3] + '</span></span><small style="display:inline;margin:0">' + ru(full) + '</small></div><small>' + s[0] + ' → ' + full + ' · ' + s[4] + '</small></div>' + SAYBTN(full);
+    softl.appendChild(r);
+  });
+  var softVis = false, softTimer = null;
+  function softRun(){ var rows = $$('.sr', softl); rows.forEach(function(r){ r.classList.remove('go'); }); rows.forEach(function(r, k){ setTimeout(function(){ if (softVis) r.classList.add('go'); }, 400 + k*650); }); }
+  whenVisible(softl, function(){ if (softVis) return; softVis = true; softRun(); clearInterval(softTimer); softTimer = setInterval(softRun, 8500); }, function(){ softVis = false; clearInterval(softTimer); });
+
+  /* ---------- 08 buffers ---------- */
+  var BF = [
+    {k:'y', stem:'araba', b:'y', s:'ı', t:'<b>y для падежей.</b> araba + ı: две гласные стукнулись. Встаёт y: arabayı «арабайы». Машину (вин.).'},
+    {k:'s', stem:'araba', b:'s', s:'ı', t:'<b>s для «его, её».</b> araba + ı в значении «его машина»: arabası «арабасы».'},
+    {k:'n', stem:'araba', b:'n', s:'ın', t:'<b>n для «чего? кого?».</b> araba + ın: arabanın «арабанын». Машины (род.).'}
+  ];
+  var bTabs = $('#bTabs'), bi = 0, bUser = false, bVis = false, bTimer = null, bTl = null;
+  BF.forEach(function(x, k){ var b = document.createElement('button'); b.className = 'tab'; b.setAttribute('role','tab'); b.lang = 'tr'; b.textContent = 'буфер ' + x.k; b.addEventListener('click', function(){ bUser = true; showB(k); }); bTabs.appendChild(b); });
+  function showB(k){
+    bi = k; var x = BF[k];
+    $$('.tab', bTabs).forEach(function(b, j){ b.setAttribute('aria-selected', j === k); });
+    $('#bW').innerHTML = '<span class="stem">' + x.stem.slice(0, -1) + '<i>' + x.stem.slice(-1) + '</i></span><span class="bl3" id="bL">' + x.b + '</span><span class="sfx">' + x.s + '</span>';
+    $('#bTxt').innerHTML = x.t; $('#bSay').setAttribute('data-say', x.stem + x.b + x.s);
+    if (!G) return;
+    if (bTl) bTl.kill();
+    bTl = gsap.timeline();
+    bTl.set('#bL', {width:0, padding:0, scale:0, opacity:0}).set('#boom', {opacity:0, y:0})
+      .from('#bW .sfx', {x:120, duration:.6, ease:'power3.in'})
+      .to('#bW', {keyframes:[{x:-6, duration:.05},{x:6, duration:.05},{x:-4, duration:.05},{x:0, duration:.05}]})
+      .to('#boom', {opacity:1, y:-8, duration:.25}, '<')
+      .to('#boom', {opacity:0, duration:.3}, '+=.4')
+      .to('#bL', {width:'auto', padding:'10px 6px', duration:.35, ease:'power2.out'})
+      .to('#bL', {scale:1, opacity:1, duration:.6, ease:'elastic.out(1,.45)'}, '-=.1');
+  }
+  showB(0);
+  whenVisible($('#buf'), function(){ if (bVis) return; bVis = true; showB(bi); clearInterval(bTimer); bTimer = setInterval(function(){ if (!bUser && bVis) showB((bi+1) % BF.length); }, 5000); }, function(){ bVis = false; clearInterval(bTimer); });
+  var CROWD = [['tren','t<em>i</em>ren','«тирен» · поезд, так говорят в жизни'],['spor','s<em>i</em>por','«сипор» · спорт, в речи'],['kral','k<em>ı</em>ral','«кырал» · король, в речи'],['istasyon','<em>i</em>stasyon','«истасйон» · станция: гласную вписали даже на письме']];
+  $('#crowd').innerHTML = CROWD.map(function(c){ return '<div class="cr2 rv"><div class="t"><div class="w" lang="tr">' + c[1] + '</div><small>пишется <span lang="tr">' + c[0] + '</span> · ' + c[2] + '</small></div>' + SAYBTN(c[0]) + '</div>'; }).join('');
+
+  /* ---------- lab ---------- */
+  var LW = [
+    ['kitap','книга','kitab'],['ev','дом'],['ağaç','дерево','ağac'],['okul','школа'],['göz','глаз'],['çocuk','ребёнок','çocuğ'],['araba','машина'],['kedi','кошка'],['süt','молоко'],['sokak','улица','sokağ']
+  ];
+  var LS = [['pl','-lAr','много'],['loc','-DA','где?'],['acc','-(y)I','кого? что?'],['p1','-(I)m','мой']];
+  var li = 0, lsi = 0;
+  function labBuild(){
+    var W = LW[li], w = W[0], soft = W[2] || w, lv = lastV(w), a = A2(w), I = I4[lv], last = w[w.length-1], endV = VOW.indexOf(last) > -1, vl = VL.indexOf(last) > -1;
+    var steps = [], parts;
+    var C = {h:'#5B6BDC', s:'#E8572A', m:'#F0A53A', b:'#8DB82A'};
+    var hv = BACK.indexOf(lv) > -1 ? 'задняя' : 'передняя';
+    if (LS[lsi][0] === 'pl') {
+      parts = [[w,''],['l' + a + 'r','sf']];
+      steps.push(['h','Гармония: последняя гласная «' + lv + '», ' + hv + '. Значит <b>-l' + a + 'r</b>.']);
+    } else if (LS[lsi][0] === 'loc') {
+      parts = [[w,''],[(vl ? 't' : 'd') + a, 'sf']];
+      steps.push(['s', vl ? 'Шахап: «' + last + '» глухая. d глохнет в <b>t</b>.' : 'Шахап: «' + last + '» не глухая. Оставляем <b>d</b>.']);
+      steps.push(['h','Гармония: «' + lv + '», ' + hv + '. Гласная <b>' + a + '</b>.']);
+    } else {
+      var suf = LS[lsi][0] === 'acc' ? I : I + 'm';
+      if (LS[lsi][0] === 'p1' && endV) suf = 'm';
+      if (endV && LS[lsi][0] === 'acc') { parts = [[w,''],['y','x'],[suf,'sf']]; steps.push(['b','Слово кончается на гласную. Встаёт буфер <b>y</b>.']); }
+      else if (endV) { parts = [[w,''],[suf,'sf']]; steps.push(['b','Слово кончается на гласную. Окончание просто <b>-m</b>, без лишней гласной.']); }
+      else if (soft !== w) { parts = [[soft.slice(0, -1),''],[soft.slice(-1),'ch'],[suf,'sf']]; steps.push(['m','Смягчение: «' + last + '» между гласными становится <b>' + soft.slice(-1) + '</b>.']); }
+      else { parts = [[w,''],[suf,'sf']]; steps.push(['m', w.length <= 3 || w === 'süt' ? 'Один слог. Смягчения нет.' : '«' + last + '» не меняется.']); }
+      steps.push(['h','Малая гармония: «' + lv + '» → дверь <b>' + I + '</b>.']);
+    }
+    var full = parts.map(function(p){ return p[0]; }).join('');
+    $('#labRes').innerHTML = parts.map(function(p){ return '<span class="' + p[1] + '">' + esc(p[0]) + '</span>'; }).join('');
+    $('#labTr').textContent = ru(full); $('#labSay').setAttribute('data-say', full);
+    var M = {pl:'много: ', loc:'где: ', acc:'винительный: ', p1:'мой, моя: '};
+    $('#labMean').textContent = W[1] + ' → ' + M[LS[lsi][0]] + full;
+    $('#labSteps').innerHTML = steps.map(function(s, k){ return '<div class="ls"><span class="n" style="background:' + C[s[0]] + '">' + (k+1) + '</span><span>' + s[1] + '</span></div>'; }).join('');
+    if (G) { gsap.from('#labRes span', {y:-20, opacity:0, duration:.4, ease:'back.out(2)', stagger:.12}); gsap.from('#labSteps .ls', {x:24, opacity:0, duration:.4, stagger:.12, delay:.2}); }
+    $$('#labW .tab').forEach(function(b, j){ b.setAttribute('aria-selected', j === li); });
+    $$('#labS .tab').forEach(function(b, j){ b.setAttribute('aria-selected', j === lsi); });
+  }
+  LW.forEach(function(w, k){ var b = document.createElement('button'); b.className = 'tab'; b.setAttribute('role','tab'); b.textContent = w[0]; b.addEventListener('click', function(){ labUser = true; li = k; labBuild(); say($('#labSay').getAttribute('data-say')); }); $('#labW').appendChild(b); });
+  LS.forEach(function(s, k){ var b = document.createElement('button'); b.className = 'tab'; b.setAttribute('role','tab'); b.innerHTML = '<span lang="tr">' + s[1] + '</span> · ' + s[2]; b.addEventListener('click', function(){ labUser = true; lsi = k; labBuild(); say($('#labSay').getAttribute('data-say')); }); $('#labS').appendChild(b); });
+  var labUser = false, labTimer = null;
+  labBuild();
+  whenVisible($('#phone'), function(){ clearInterval(labTimer); labTimer = setInterval(function(){ if (labUser) return; lsi = (lsi + 1) % LS.length; if (lsi === 0) li = (li + 1) % LW.length; labBuild(); }, 3200); }, function(){ clearInterval(labTimer); });
+  var ld = $('#ldots');
+  [[8,12,70],[86,8,90],[92,46,60],[4,60,46],[70,80,110],[30,90,54],[52,4,40]].forEach(function(p){ var d = document.createElement('i'); d.style.left = p[0] + '%'; d.style.top = p[1] + '%'; d.style.width = d.style.height = p[2] + 'px'; ld.appendChild(d); });
+  if (G) { gsap.to('#ldots i', {y:function(){ return gsap.utils.random(-60, 60); }, scrollTrigger:{trigger:'.limep', start:'top bottom', end:'bottom top', scrub:true}}); gsap.from('#phone', {y:120, rotation:3, duration:1.2, ease:'power3.out', scrollTrigger:{trigger:'.limep', start:'top 70%', once:true}}); }
+
+  /* ---------- video ---------- */
+  var VIDS = [['a-WJM0H6Fec','Правило гармонии. Гармония гласных','Канал «Pratikturkce» · 108 тыс. просмотров'],['n9g6HVQkWe8','Закон гармонии согласных: Fıstıkçı Şahap','Канал «Турецкий за 5 минут» · 4 минуты'],['UUDpZnNC_2E','Озвончение глухих согласных и выпадение гласных','Канал «Seve Seve Türkçe» · 43 тыс. просмотров']];
+  var vi = 0;
+  $$('#vTabs .tab').forEach(function(b){ b.addEventListener('click', function(){ vi = +b.getAttribute('data-v'); $$('#vTabs .tab').forEach(function(x){ x.setAttribute('aria-selected', x === b); }); setVid(false); }); });
+  function setVid(play){ var v = VIDS[vi], box = $('#vbox'), fr = $('iframe', box); if (fr) fr.remove(); $('#vImg').src = 'https://i.ytimg.com/vi/' + v[0] + '/hqdefault.jpg'; $('#vT').textContent = v[1]; $('#vC').textContent = v[2];
+    if (play) { var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + v[0] + '?autoplay=1&rel=0&playsinline=1'; f.title = v[1]; f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'; f.allowFullscreen = true; box.appendChild(f); } }
+  $('#vPlay').addEventListener('click', function(){ setVid(true); });
+  if (G) gsap.fromTo('#vImg', {scale:1.15}, {scale:1.02, ease:'none', scrollTrigger:{trigger:'#vbox', start:'top bottom', end:'bottom top', scrub:true}});
+
+  /* ---------- confetti ---------- */
+  function confetti(el){ if (!G) return; var r = el.getBoundingClientRect(), cols = ['#D7FB4C','#5B6BDC','#E8572A','#93C7EE','#1D2654'];
+    for (var k = 0; k < 34; k++) { var d = document.createElement('i'); d.className = 'conf'; d.style.background = cols[k % cols.length]; d.style.left = (r.left + r.width/2) + 'px'; d.style.top = (r.top + r.height/2) + 'px'; document.body.appendChild(d);
+      gsap.to(d, {x:gsap.utils.random(-170, 170), y:gsap.utils.random(-220, 40), scale:gsap.utils.random(.4, 1.4), duration:gsap.utils.random(.8, 1.4), ease:'power3.out', onComplete:(function(n){ return function(){ gsap.to(n, {y:'+=120', opacity:0, duration:.6, onComplete:function(){ n.remove(); }}); }; })(d)}); } }
+
+  /* ---------- quizzes ---------- */
+  function makeQuiz(box, Q, qlabel){
+    var qi = 0, qs = 0;
+    function draw(){
+      var q = Q[qi];
+      box.innerHTML = '<div class="qbar"><i style="width:' + (qi/Q.length*100) + '%"></i></div><div class="qw"><b lang="tr">' + q[0] + '</b>' + SAYBTN(q[0]) + '</div><p class="qq">Вопрос ' + (qi+1) + ' из ' + Q.length + '. ' + qlabel + ' <span style="color:var(--ink)">' + q[1] + '</span></p>' +
+        '<div class="opts">' + q[2].map(function(o, k){ return '<button class="opt" data-k="' + k + '" lang="tr">' + o + '</button>'; }).join('') + '</div>' +
+        '<div class="qx">' + ICON('brain') + '<span>Выбери вариант.</span></div><div class="qnav"><span class="small qs">Правильно: ' + qs + '</span><button class="btn sm qn" disabled style="opacity:.4">Дальше' + ICON('arrow-right') + '</button></div>';
+      $$('.opt', box).forEach(function(b){ b.addEventListener('click', function(){ answer(+b.getAttribute('data-k'), b); }); });
+      if (G) gsap.from($$('.opt', box), {y:16, opacity:0, duration:.35, stagger:.06});
+    }
+    function answer(k, btn){
+      var q = Q[qi], ok = k === q[3];
+      $$('.opt', box).forEach(function(b, j){ b.disabled = true; if (j === q[3]) b.classList.add('ok'); });
+      if (!ok) btn.classList.add('bad'); else { qs++; confetti(btn); }
+      $('.qs', box).textContent = 'Правильно: ' + qs;
+      $('.qx', box).innerHTML = ICON(ok ? 'circle-check' : 'circle-x') + '<span><b>' + (ok ? 'Да. ' : 'Мимо. ') + '</b>' + q[4] + '</span>';
+      say(q[2][q[3]]);
+      var n = $('.qn', box); n.disabled = false; n.style.opacity = 1; n.addEventListener('click', function(){ qi++; qi < Q.length ? draw() : done(); });
+    }
+    function done(){
+      var p = qs / Q.length, C = 2*Math.PI*52;
+      var msg = qs === Q.length ? 'Всё верно. Продавец книг гордился бы тобой.' : qs >= 4 ? 'Почти. Загляни в шаг, где споткнулся.' : 'Нормально. Я начинал с kitapler. Пройди шаги ещё раз.';
+      box.innerHTML = '<div class="done"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#F1F1EF" stroke-width="12"/><circle class="qr" cx="60" cy="60" r="52" fill="none" stroke="#5B6BDC" stroke-width="12" stroke-linecap="round" stroke-dasharray="' + C + '" stroke-dashoffset="' + (C*(1-p)) + '"/></svg><b>' + qs + '/' + Q.length + '</b></div><p>' + msg + '</p><button class="btn lime qa">' + ICON('rotate-ccw') + 'Ещё раз</button></div>';
+      if (G) gsap.from($('.qr', box), {attr:{'stroke-dashoffset':C}, duration:1.2, ease:'power3.out'});
+      if (qs >= 5) confetti($('.ring', box));
+      $('.qa', box).addEventListener('click', function(){ qi = 0; qs = 0; draw(); });
+    }
+    draw();
+  }
+  makeQuiz($('#qz1'), [
+    ['kalem','ручка',['kalemlar','kalemler'],1,'Последняя гласная e, передняя. Значит -ler: kalemler.'],
+    ['kapı','дверь',['kapılar','kapıler'],0,'Последняя гласная ı, задняя. -lar: kapılar.'],
+    ['göz','глаз',['gözlar','gözler'],1,'ö передняя. -ler: gözler.'],
+    ['okul','школа',['okullar','okuller'],0,'u задняя. -lar: okullar.'],
+    ['şehir','город',['şehirlar','şehirler'],1,'Последняя гласная i, передняя. -ler: şehirler.'],
+    ['masa','стол',['masalar','masaler'],0,'a задняя. -lar: masalar.']
+  ], 'Множественное число от');
+  makeQuiz($('#qz2'), [
+    ['kitap','книга',['kitapı','kitabı','kitabi'],1,'p между гласными смягчается в b. Последняя гласная a → дверь ı: kitabı.'],
+    ['araba','машина',['arabaı','arabayı','arabayi'],1,'Слово на гласную. Буфер y. a → ı: arabayı.'],
+    ['ev','дом',['evi','evı','evü'],0,'e → дверь i: evi.'],
+    ['çocuk','ребёнок',['çocuku','çocuğu','çocuğı'],1,'k между гласными становится ğ. u → дверь u: çocuğu.'],
+    ['top','мяч',['topu','tobu','topı'],0,'Один слог. Смягчения нет. o → u: topu.'],
+    ['göz','глаз',['gözi','gözu','gözü'],2,'ö → дверь ü: gözü.']
+  ], 'Кого? Что? —');
+
+  /* ---------- exercise 2: locative ---------- */
+  var LOC = [['ev','в доме','de','e передняя, v звонкая.'],['kitap','в книге','ta','p из Шахапа, a задняя.'],['okul','в школе','da','l звонкая, u задняя.'],['sokak','на улице','ta','k из Шахапа, a задняя.'],['şehir','в городе','de','r звонкая, i передняя.'],['süt','в молоке','te','t из Шахапа, ü передняя.']];
+  var lens = $('#lens');
+  function drawLoc(){
+    lens.innerHTML = LOC.map(function(x, k){ return '<div class="lr" data-k="' + k + '"><span class="w" lang="tr">' + x[0] + '<u style="color:var(--peri)">__</u><small style="display:block;font-size:12px;color:var(--grey);font-weight:400">' + x[1] + '</small></span>' + SAYBTN(x[0] + x[2]) +
+      '<span class="seg">' + ['da','de','ta','te'].map(function(o){ return '<button aria-pressed="false" data-v="' + o + '" lang="tr">' + o + '</button>'; }).join('') + '</span><div class="res"></div></div>'; }).join('');
+    segBind(lens); $('#lenScore').textContent = '';
+  }
+  drawLoc();
+  $('#lenCheck').addEventListener('click', function(e){
+    var s = 0;
+    $$('.lr', lens).forEach(function(r){ var x = LOC[+r.getAttribute('data-k')], sel = $('[aria-pressed="true"]', r), ok = sel && sel.getAttribute('data-v') === x[2]; if (ok) s++;
+      r.classList.remove('right','wrong'); r.classList.add('checked', ok ? 'right' : 'wrong');
+      $('.res', r).innerHTML = ICON(ok ? 'circle-check' : 'circle-x') + '<span><b lang="tr">' + x[0] + x[2] + '.</b> ' + x[3] + '</span>'; });
+    $('#lenScore').textContent = s + ' / ' + LOC.length; if (s === LOC.length) confetti(e.currentTarget);
+  });
+  $('#lenReset').addEventListener('click', drawLoc);
+
+  /* ---------- cheat ---------- */
+  var TC = {v:'#C3EB2F', z:'#5B6BDC', s:'#E8572A', m:'#F0A53A', b:'#8DB82A'};
+  var CH = [
+    ['v','a ı o u','задние','-lar, -da'],['v','e i ö ü','передние','-ler, -de'],['v','a ı → ı','4 двери','kızı'],['v','e i → i','4 двери','evi'],['v','o u → u','4 двери','okulu'],['v','ö ü → ü','4 двери','gözü'],
+    ['s','f s t k ç ş h p','глухие','Fıstıkçı Şahap'],['s','d → t','после глухой','kitapta'],['s','c → ç','после глухой','sütçü'],
+    ['m','p ç t k','→ b c d ğ','kitabı'],['m','1 слог','без смягчения','topu'],['b','y','гласная + падеж','arabayı'],['b','s','его, её','arabası'],['b','n','чего? кого?','arabanın']
+  ];
+  $('#cheatRows').innerHTML = CH.map(function(c){ return '<div class="cr"><i class="dotc" style="background:' + TC[c[0]] + '"></i><code lang="tr">' + c[1] + '</code><span class="s">' + c[2] + '</span><span class="e" lang="tr">' + c[3] + '</span></div>'; }).join('');
+  if (G) gsap.from('#cheatRows .cr', {x:-20, opacity:0, duration:.4, stagger:.03, scrollTrigger:{trigger:'#cheatRows', start:'top 85%', once:true}});
+
+  /* ---------- final ---------- */
+  var rd = $('#ringDots');
+  for (var k2 = 0; k2 < 14; k2++) { var a = k2 / 14 * Math.PI * 2, rr = 46 + (k2 % 2 ? 4 : 0), sz = k2 % 3 === 0 ? 9 : k2 % 3 === 1 ? 6 : 4; var d2 = document.createElement('i'); d2.style.width = d2.style.height = sz + '%'; d2.style.left = (50 + Math.cos(a)*rr - sz/2) + '%'; d2.style.top = (50 + Math.sin(a)*rr - sz/2) + '%'; rd.appendChild(d2); }
+  if (G) {
+    gsap.to('#grass', {rotation:40, ease:'none', scrollTrigger:{trigger:'#eye', start:'top bottom', end:'bottom top', scrub:true}});
+    gsap.to('#ringDots', {rotation:-60, ease:'none', scrollTrigger:{trigger:'#eye', start:'top bottom', end:'bottom top', scrub:true}});
+    gsap.from('#ringDots i', {scale:0, duration:.8, ease:'back.out(3)', stagger:.05, scrollTrigger:{trigger:'#eye', start:'top 60%', once:true}});
+    gsap.from('#eye .in', {y:60, scale:.9, duration:1.2, ease:'power3.out', scrollTrigger:{trigger:'#eye', start:'top 60%', once:true}});
+    gsap.to('.halo', {scale:1.04, duration:2.2, ease:'sine.inOut', repeat:-1, yoyo:true});
+  }
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', xInit); else xInit();
+</script>
+</body>
+</html>
